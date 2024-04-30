@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+<body>
+    {% block content %}
+        {% if white_all_time %}
+            <img src="data:image/png;base64,{{ white_all_time }}" alt="Doughnut Chart">
+        {% endif %}
+        {% if red_all_time %}
+            <img src="data:image/png;base64,{{ red_all_time }}" alt="Doughnut Chart">
+        {% endif %}       
+    {% endblock %}
+</body>
