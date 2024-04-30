@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sasa Djukic">
+    <meta name="description" content="Powerball Data">
+    <meta name="keywords" content="lottery, Powerball, Mega Millions">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <title>Powerball Data</title>
+</head>
+<body>
+    <div class="header">
+        <a href="{{ url_for('powerball.home') }}"><button>Home</button></a>
+        <a href="{{ url_for('powerball.rules') }}"><button>Rules</button></a>
+        <a href="{{ url_for('powerball.all_time_winners') }}"><button>All Time Winners</button></a>
+        <a href="{{ url_for('powerball.recent_winners') }}"><button>Recent Winners</button></a>
+        <a href="{{ url_for('powerball.search') }}"><button>Search</button></a>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
