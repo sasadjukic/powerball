@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+
+<body>
+    {% block content %}
+        <!-- write a form to call search function from app.py -->
+        <form action="{{ url_for('powerball.search') }}" method="POST">
+            <label for="number_input">Enter a powerball number</label>
+            <input type="number" id="number_input" name="number_input" min="1" max="69">
+            <br>
+            <label for="date_input">Select date to start your search</label>
+            <input type="date" id="date_input" name="date_input" min="2015-10-04">
+            <br>
+            <input type="submit" id="search-button"value="Submit">
+        </form>
+        {% if white_percentage %}
+            <!-- create table with following columns: start date, end date, number, times drawn, percentage -->
+            <div class="search-content">
+                <table>
+                    <tr>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Number</th>
+                        <th>Ball Type</th>  
+                        <th>Times Drawn</th>
+                        <th>Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>{{ time_period }}</td>
+                        <td>{{ last_updated }}</td>
+                        <td>{{ number }}</td>
+                        <td>White Ball</td>
+                        <td>{{ white_occurrences }}</td>
+                        <td>{{ white_percentage }}%</td>
+                    </tr>
+                    {% if red_percentage %}
+                        <tr>
+                            <td>{{ time_period }}</td>
+                            <td>{{ last_updated }}</td>
+                            <td>{{ number }}</td>
+                            <td>Powerball</td>
+                            <td>{{ red_occurrences }}</td>
+                            <td>{{ red_percentage }}%</td>
+                        </tr>
+                    {% endif %}
+                </table>
+            </div>
+        {% endif %}
+    {% endblock %}
+</body>
