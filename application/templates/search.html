@@ -24,6 +24,10 @@
                         <th>Ball Type</th>  
                         <th>Times Drawn</th>
                         <th>Percentage</th>
+                        <th>Max Drawing Draught*</th>
+                        <th>Current Drawing Draught*</th>
+                        <th>Max Monthly Streak*</th>
+                        <th>Current Monthly Streak*</th>
                     </tr>
                     <tr>
                         <td>{{ time_period }}</td>
@@ -32,6 +36,10 @@
                         <td>White Ball</td>
                         <td>{{ white_occurrences }}</td>
                         <td>{{ white_percentage }}%</td>
+                        <td>{{ white_draughts[0] }}</td>
+                        <td>{{ white_draughts[1] }}</td>
+                        <td>{{ white_streaks[0] }}</td>
+                        <td>{{ white_streaks[1] }}</td>
                     </tr>
                     {% if red_percentage %}
                         <tr>
@@ -41,10 +49,16 @@
                             <td>Powerball</td>
                             <td>{{ red_occurrences }}</td>
                             <td>{{ red_percentage }}%</td>
+                            <td>{{ red_draught[0] }}</td>
+                            <td>{{ red_draught[1] }}</td>
+                            <td>{{ red_streak[0] }}</td>
+                            <td>{{ red_streak[1] }}</td>
                         </tr>
                     {% endif %}
                 </table>
             </div>
+            <p>*1 Draught refers to consecutive draws a number HAS NOT been drawn</p>
+            <p>*2 Streak refers to consecutive months a number HAS BEEN drawn</p>
         {% endif %}
     {% endblock %}
 </body>
