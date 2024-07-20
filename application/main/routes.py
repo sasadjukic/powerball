@@ -2,7 +2,10 @@
 import datetime
 from flask import render_template, Blueprint, request
 from application.data.main_data import latest, start_date
-from application.data.user_search import generate_percentage, white_balls, red_balls, date_search
+from application.data.user_search import (generate_percentage, white_balls, 
+                                          red_balls, date_search,
+                                          get_streak, get_draught,
+                                          get_red_draught, get_red_streak)
 from application.data.recent_winners_white import recent_white_winners
 from application.data.recent_winners_red import recent_red_winners
 from application.data.all_time_winners_white import all_time_white_winners
@@ -64,16 +67,25 @@ def search():
             # Generate percentage
             white_percentage = generate_percentage(white_occurrences, number_of_pulls)
 
+            white_draughts = get_draught(number, date_frame)
+            white_streaks = get_streak(number, date_frame)
+
             # if user number is less than 26, then fetch both white and red balls 
             if number <= 26:
                 red_occurrences = red_balls(number, date_frame)
                 red_percentage = generate_percentage(red_occurrences, number_of_pulls)
+                red_draught = get_red_draught(number, date_frame)
+                red_streak = get_red_streak(number, date_frame)
 
                 return render_template('search.html', number=number, 
                                         red_occurrences=red_occurrences, 
                                         red_percentage=red_percentage, 
+                                        red_draught=red_draught,
+                                        red_streak=red_streak,
                                         white_occurrences=white_occurrences, 
                                         white_percentage=white_percentage, 
+                                        white_draughts=white_draughts,
+                                        white_streaks=white_streaks,
                                         time_period=time_period,
                                         last_updated=last_updated
                                         )
@@ -82,7 +94,13 @@ def search():
                                     white_occurrences=white_occurrences, 
                                     white_percentage=white_percentage, 
                                     time_period=time_period,
-                                    last_updated=last_updated
+                                    last_updated=last_updated,
+                                    white_draughts=white_draughts,
+                                    white_streaks=white_streaks
                                     )
     
     return render_template('search.html', number=number)
+
+@powerball.route('/predictions', methods=['POST', 'GET'])
+def predictions():
+    return render_template('predictions.html')
