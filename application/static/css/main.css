@@ -136,6 +136,10 @@ form {
         border-spacing: 10px;
     }
 
+    .basic-stats {
+        margin-bottom: 50px;
+    }
+
     table, th, td {
         border: 1px solid var(--brown);
         border-collapse: collapse;
@@ -153,6 +157,12 @@ form {
     tr:nth-child(3) {
         background-color: var(--main-color);
         color: var(--white);
+    }
+
+    .notes {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 50px;
     }
 
 h3, h4, p {
