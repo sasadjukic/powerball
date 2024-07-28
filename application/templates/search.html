@@ -16,7 +16,8 @@
         {% if white_percentage %}
             <!-- create table with following columns: start date, end date, number, times drawn, percentage -->
             <div class="search-content">
-                <table>
+                <h4>BASIC STATS</h4>
+                <table class="basic-stats">
                     <tr>
                         <th>Start Date</th>
                         <th>End Date</th>
@@ -24,10 +25,6 @@
                         <th>Ball Type</th>  
                         <th>Times Drawn</th>
                         <th>Percentage</th>
-                        <th>Max Drawing Draught*</th>
-                        <th>Current Drawing Draught*</th>
-                        <th>Max Monthly Streak*</th>
-                        <th>Current Monthly Streak*</th>
                     </tr>
                     <tr>
                         <td>{{ time_period }}</td>
@@ -36,10 +33,6 @@
                         <td>White Ball</td>
                         <td>{{ white_occurrences }}</td>
                         <td>{{ white_percentage }}%</td>
-                        <td>{{ white_draughts[0] }}</td>
-                        <td>{{ white_draughts[1] }}</td>
-                        <td>{{ white_streaks[0] }}</td>
-                        <td>{{ white_streaks[1] }}</td>
                     </tr>
                     {% if red_percentage %}
                         <tr>
@@ -49,16 +42,59 @@
                             <td>Powerball</td>
                             <td>{{ red_occurrences }}</td>
                             <td>{{ red_percentage }}%</td>
+                        </tr>
+                    {% endif %}
+                </table>
+                <h4>DRAUGHTS</h4>
+                <table>
+                    <tr> 
+                        <th>Number</th>
+                        <th>Ball Type</th>
+                        <th>Max Drawing Draught*</th>
+                        <th>Current Drawing Draught*</th>
+                    </tr>
+                    <tr>
+                        <td>{{ number }}</td>
+                        <td>White Ball</td>
+                        <td>{{ white_draughts[0] }}</td>
+                        <td>{{ white_draughts[1] }}</td>
+                    </tr>
+                    {% if red_percentage %}
+                        <tr>
+                            <td>{{ number }}</td>
+                            <td>Powerball</td>
                             <td>{{ red_draught[0] }}</td>
                             <td>{{ red_draught[1] }}</td>
+                        </tr>
+                    {% endif %}
+                </table>
+                <p class="notes">*Draught refers to consecutive draws a number HAS NOT been drawn</p>
+                <h4>STREAKS</h4>
+                <table>
+                    <tr>
+                        <th>Number</th>
+                        <th>Ball Type</th>
+                        <th>Max Monthly Streak*</th>
+                        <th>Current Monthly Streak*</th>
+                    </tr>
+                    <tr>
+                        <td>{{ number }}</td>
+                        <td>White Ball</td>
+                        <td>{{ white_streaks[0] }}</td>
+                        <td>{{ white_streaks[1] }}</td>
+                    </tr>
+                    {% if red_percentage %}
+                        <tr>
+                            <td>{{ number }}</td>
+                            <td>Powerball</td>
                             <td>{{ red_streak[0] }}</td>
                             <td>{{ red_streak[1] }}</td>
                         </tr>
                     {% endif %}
                 </table>
+                <p class="notes">*Streak refers to consecutive months a number HAS BEEN drawn</p>
             </div>
-            <p>*1 Draught refers to consecutive draws a number HAS NOT been drawn</p>
-            <p>*2 Streak refers to consecutive months a number HAS BEEN drawn</p>
+            
         {% endif %}
     {% endblock %}
 </body>
