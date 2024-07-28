@@ -3,10 +3,10 @@
 <body>
     {% block content %}
         {% if chart_white_numbers %}
-            <img src="data:image/png;base64,{{ chart_white_numbers }}" alt="Doughnut Chart">
+            <img src="data:image/png;base64,{{ chart_white_numbers }}" alt="Bar Chart">
         {% endif %}
         {% if chart_red_numbers %}
-            <img src="data:image/png;base64,{{ chart_red_numbers }}" alt="Doughnut Chart">
+            <img src="data:image/png;base64,{{ chart_red_numbers }}" alt="Bar Chart">
         {% endif %}
     {% endblock %}
 </body>
