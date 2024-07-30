@@ -1,5 +1,5 @@
 
-from application.data.main_data import powerball_filtered
+from application.data.main_data import powerball_filtered, powerball_exploded
 import pandas as pd
 
 def white_balls(n: int, powerball_user: pd.DataFrame) -> int:
@@ -102,3 +102,14 @@ def get_red_streak(n: int, powerball: pd.DataFrame) -> list[int]:
                     max_streak = streak
 
     return [max_streak, streak]
+
+# find at what dates a user number was drawn as white ball winner
+def monthly_number(n: int):
+    number = powerball_exploded[powerball_exploded['Winning Numbers'] == n]
+    all_winners = number['Draw Date'].dt.month.tolist()
+    return all_winners
+
+def monthly_number_red(n:int):
+    r_number = powerball_filtered[powerball_filtered['Red Ball'] == n]
+    all_winners = r_number['Draw Date'].dt.month.tolist()
+    return all_winners
