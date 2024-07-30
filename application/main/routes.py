@@ -5,7 +5,10 @@ from application.data.main_data import latest, start_date
 from application.data.user_search import (generate_percentage, white_balls, 
                                           red_balls, date_search,
                                           get_streak, get_draught,
-                                          get_red_draught, get_red_streak)
+                                          get_red_draught, get_red_streak,
+                                          monthly_number, monthly_number_red)
+from application.data.user_search_monthly import per_month, white_monthly_winners
+from application.data.user_search_monthly_red import red_monthly_winners
 from application.data.recent_winners_white import recent_white_winners
 from application.data.recent_winners_red import recent_red_winners
 from application.data.all_time_winners_white import all_time_white_winners
@@ -13,6 +16,7 @@ from application.data.all_time_winners_red import all_time_red_winners
 
 powerball = Blueprint('powerball', __name__)
 last_updated = latest
+
 @powerball.route('/')
 def home():
     return render_template('index.html', last_updated=last_updated)
@@ -70,6 +74,11 @@ def search():
             white_draughts = get_draught(number, date_frame)
             white_streaks = get_streak(number, date_frame)
 
+            monthly_winners = monthly_number(number)
+            months = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0}
+            pm = per_month(monthly_winners, months)
+            chart_white_monthly = white_monthly_winners(number, pm)
+
             # if user number is less than 26, then fetch both white and red balls 
             if number <= 26:
                 red_occurrences = red_balls(number, date_frame)
@@ -77,6 +86,11 @@ def search():
                 red_draught = get_red_draught(number, date_frame)
                 red_streak = get_red_streak(number, date_frame)
 
+                monthly_winner_red = monthly_number_red(number)
+                months_red = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0}
+                pm_red = per_month(monthly_winner_red, months_red)
+                chart_red_monthly = red_monthly_winners(number, pm_red)
+                
                 return render_template('search.html', number=number, 
                                         red_occurrences=red_occurrences, 
                                         red_percentage=red_percentage, 
@@ -87,7 +101,9 @@ def search():
                                         white_draughts=white_draughts,
                                         white_streaks=white_streaks,
                                         time_period=time_period,
-                                        last_updated=last_updated
+                                        last_updated=last_updated,
+                                        chart_white_monthly = chart_white_monthly,
+                                        chart_red_monthly = chart_red_monthly
                                         )
 
             return render_template('search.html', number=number, 
@@ -96,7 +112,8 @@ def search():
                                     time_period=time_period,
                                     last_updated=last_updated,
                                     white_draughts=white_draughts,
-                                    white_streaks=white_streaks
+                                    white_streaks=white_streaks,
+                                    chart_white_monthly = chart_white_monthly
                                     )
     
     return render_template('search.html', number=number)
