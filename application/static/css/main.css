@@ -165,6 +165,12 @@ form {
         margin-bottom: 50px;
     }
 
+    .chart-title {
+        font-size: 1rem;
+        font-family: var(--main-font);
+        text-transform: uppercase;
+    }
+
 h3, h4, p {
     text-align: center;
 }
