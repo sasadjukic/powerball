@@ -2,11 +2,21 @@
 {% extends 'base.html' %}
 <body>
     {% block content %}
-        {% if chart_white_numbers %}
-            <img src="data:image/png;base64,{{ chart_white_numbers }}" alt="Bar Chart">
-        {% endif %}
-        {% if chart_red_numbers %}
-            <img src="data:image/png;base64,{{ chart_red_numbers }}" alt="Bar Chart">
-        {% endif %}
+        <div class="recent-winners">
+            <p class="rc-title">Winners of the last 12 draws</p>
+            <div class="nc-main-container">
+                {% for i in range(12) %}
+                    <p class="nc-title">Draw Date</p>
+                    <p class="rc-date">{{ recent[0][i] }}</p>
+                    <p class="rc-numbers">Winning Numbers</p>
+                    <div class="nc-container">
+                    {% for j in range(5) %}
+                        <div class="number-circle">{{ recent[1][i][j] }}</div>
+                    {% endfor %}
+                        <div class="number-circle" id="powerball">{{ recent[2][i] }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     {% endblock %}
 </body>
