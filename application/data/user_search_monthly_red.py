@@ -44,8 +44,10 @@ def red_monthly_winners(n: int, monthly_winners: dict[int, int]):
             value, 
             index, 
             str(value),
-            position = (value - 0.7, index - 0.15),
-            color = numbers_color
+            position = (value, index),
+            ha = 'left',
+            va = 'center',
+            color = tick_color
             )
 
     # Convert chart to base64 for embedding in HTML
