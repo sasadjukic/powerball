@@ -113,3 +113,14 @@ def monthly_number_red(n:int):
     r_number = powerball_filtered[powerball_filtered['Red Ball'] == n]
     all_winners = r_number['Draw Date'].dt.month.tolist()
     return all_winners
+
+def yearly_number(n: int):
+    number = powerball_exploded[powerball_exploded['Winning Numbers'] == n]
+    all_winners = number['Draw Date'].dt.year.tolist()
+    return all_winners
+
+def yearly_number_red(n:int):
+    r_number = powerball_filtered[powerball_filtered['Red Ball'] == n]
+    all_winners = r_number['Draw Date'].dt.year.tolist()
+    return all_winners
+
