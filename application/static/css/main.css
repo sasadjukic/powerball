@@ -10,6 +10,7 @@
     --main-font: 'Raleway', sans-serif;
     --sub-font: 'Anton', sans-serif;
     --bold: 400;
+    --super-bold: 700;
     --main-color: #6C0345;
     --blue: #4793AF;
     --beige: #FFC470;
@@ -140,6 +141,20 @@ form {
         margin-bottom: 50px;
     }
 
+    .stats-title {
+        text-transform: uppercase;
+        font-family: var(--main-font);
+        font-size: 1.5rem;
+    }
+
+    #bs-st {
+        margin-bottom: 50px;
+    }
+
+    #ys-st {
+        margin-top: 50px;
+    }
+    
     table, th, td {
         border: 1px solid var(--brown);
         border-collapse: collapse;
@@ -181,3 +196,69 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+.rc-title {
+    font-family: var(--main-font);
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 100px;
+}
+
+.nc-main-container {
+    margin-top: 50px;
+}
+
+    .nc-title {
+        font-family: var(--main-font);
+        font-size: 1.25rem;
+        font-weight: var(--super-bold);
+        color: var(--beige);
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .rc-date {
+        font-family: var(--main-font);
+        font-size: 1.5rem;
+        font-weight: var(--super-bold);
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--main-color);
+        margin-bottom: 15px;
+    }
+
+    .rc-numbers {
+        font-family: var(--main-font);
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--main-color);
+    }
+
+    .nc-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+        .nc-container > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 7ch;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            border: 2px solid var(--beige);
+            text-align: center;
+            font-weight: var(--super-bold);
+            font-family: var(--main-font);
+            font-size: 1.25rem;
+        }
+
+        #powerball {
+            background-color: var(--main-color);
+            color: var(--beige);
+        }
+
