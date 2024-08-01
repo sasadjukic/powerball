@@ -48,7 +48,9 @@ def white_monthly_winners(n: int, monthly_winners: dict[int, int]):
             value, 
             index, 
             str(value),
-            position = (value - 0.7, index - 0.15),
+            position = (value, index),
+            ha = 'left',
+            va = 'center',
             color = highlight_color
             )
 
