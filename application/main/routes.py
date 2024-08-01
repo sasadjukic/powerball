@@ -6,11 +6,13 @@ from application.data.user_search import (generate_percentage, white_balls,
                                           red_balls, date_search,
                                           get_streak, get_draught,
                                           get_red_draught, get_red_streak,
-                                          monthly_number, monthly_number_red)
+                                          monthly_number, monthly_number_red,
+                                          yearly_number, yearly_number_red)
 from application.data.user_search_monthly import per_month, white_monthly_winners
 from application.data.user_search_monthly_red import red_monthly_winners
-from application.data.recent_winners_white import recent_white_winners
-from application.data.recent_winners_red import recent_red_winners
+from application.data.user_search_yearly import per_year, white_yearly_winners
+from application.data.user_search_yearly_red import red_yearly_winners
+from application.data.recent_winners import get_recent
 from application.data.all_time_winners_white import all_time_white_winners
 from application.data.all_time_winners_red import all_time_red_winners
 
@@ -37,12 +39,10 @@ def all_time_winners():
 
 @powerball.route('/recent_winners', methods=['POST', 'GET'])
 def recent_winners():
-    # Generate bar charts for winners in last 6 months
-    chart_white_numbers = recent_white_winners()
-    chart_red_numbers = recent_red_winners()
+    # Get recent powerball winners with draw dates
+    recent = get_recent()
     return render_template('recent_winners.html', 
-                            chart_white_numbers=chart_white_numbers, 
-                            chart_red_numbers=chart_red_numbers
+                            recent = recent
                             )
 
 @powerball.route('/search', methods=['POST', 'GET'])
@@ -79,6 +79,10 @@ def search():
             pm = per_month(monthly_winners, months)
             chart_white_monthly = white_monthly_winners(number, pm)
 
+            yearly_winners = yearly_number(number)
+            py = per_year(yearly_winners)
+            chart_white_yearly = white_yearly_winners(number, py)
+
             # if user number is less than 26, then fetch both white and red balls 
             if number <= 26:
                 red_occurrences = red_balls(number, date_frame)
@@ -90,6 +94,10 @@ def search():
                 months_red = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0}
                 pm_red = per_month(monthly_winner_red, months_red)
                 chart_red_monthly = red_monthly_winners(number, pm_red)
+
+                yearly_winner_red = yearly_number_red(number)
+                py_red = per_year(yearly_winner_red)
+                chart_red_yearly = red_yearly_winners(number, py_red)
                 
                 return render_template('search.html', number=number, 
                                         red_occurrences=red_occurrences, 
@@ -103,7 +111,9 @@ def search():
                                         time_period=time_period,
                                         last_updated=last_updated,
                                         chart_white_monthly = chart_white_monthly,
-                                        chart_red_monthly = chart_red_monthly
+                                        chart_red_monthly = chart_red_monthly,
+                                        chart_white_yearly = chart_white_yearly,
+                                        chart_red_yearly = chart_red_yearly
                                         )
 
             return render_template('search.html', number=number, 
@@ -113,7 +123,8 @@ def search():
                                     last_updated=last_updated,
                                     white_draughts=white_draughts,
                                     white_streaks=white_streaks,
-                                    chart_white_monthly = chart_white_monthly
+                                    chart_white_monthly = chart_white_monthly,
+                                    chart_white_yearly = chart_white_yearly
                                     )
     
     return render_template('search.html', number=number)
