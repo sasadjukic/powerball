@@ -41,7 +41,7 @@ def all_time_red_winners():
     plt.xticks(color = tick_color)
     plt.yticks(color = tick_color)
 
-    plt.xlabel('Frequency', color = highlight_color)
+    plt.xlabel('Number of Times Drawn', color = highlight_color)
     plt.ylabel('Powerball', color = highlight_color)
     plt.title('Top 10 Powerball (Red) Numbers of ALL TIME', color = highlight_color)
 
@@ -50,8 +50,10 @@ def all_time_red_winners():
             value, 
             index, 
             str(value),
-            position = (value - 3, index - 0.1),
-            color = numbers_color
+            position = (value, index),
+            ha = 'left',
+            va = 'center',
+            color = tick_color
             )
 
     # Convert chart to base64 for embedding in HTML
