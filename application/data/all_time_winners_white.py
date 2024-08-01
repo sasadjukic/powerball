@@ -41,7 +41,7 @@ def all_time_white_winners():
     plt.xticks(color = tick_color)
     plt.yticks(color = tick_color)
 
-    plt.xlabel('Frequency', color=highlight_color)
+    plt.xlabel('Number of Times Drawn', color=highlight_color)
     plt.ylabel('White Numbers', color=highlight_color)
     plt.title('Top 10 White Numbers of ALL TIME', color=highlight_color)
 
@@ -50,7 +50,9 @@ def all_time_white_winners():
             value, 
             index, 
             str(value),
-            position = (value - 5, index - 0.1),
+            position = (value, index),
+            ha = 'left',
+            va = 'center',
             color = highlight_color
             )
 
