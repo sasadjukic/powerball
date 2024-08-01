@@ -16,7 +16,7 @@
         {% if white_percentage %}
             <!-- create table with following columns: start date, end date, number, times drawn, percentage -->
             <div class="search-content">
-                <h4>BASIC STATS</h4>
+                <h4 class="stats-title" id="bs-st">Basic stats</h4>
                 <table class="basic-stats">
                     <tr>
                         <th>Start Date</th>
@@ -93,9 +93,21 @@
                     {% endif %}
                 </table>
                 <p class="notes">*Streak refers to consecutive months a number HAS BEEN drawn</p>
-            </div>
+            </div> 
+        {% endif %}
+        {% if white_percentage %}
+            <h4 class="stats-title">Monthly stats</h4>
             <img src="data:image/png;base64,{{ chart_white_monthly }}" alt="Monthly Chart">
-            <img src="data:image/png;base64,{{ chart_red_monthly }}" alt="Monthly Chart">
+            {% if red_percentage %}
+                <img src="data:image/png;base64,{{ chart_red_monthly }}" alt="Monthly Chart">
+            {% endif %}
+        {% endif %}
+        {% if white_percentage %}
+            <h4 class="stats-title" id="ys-st">Yearly stats</h4>
+            <img src="data:image/png;base64,{{ chart_white_yearly }}" alt="Yearly Chart">
+            {% if red_percentage %}
+                <img src="data:image/png;base64,{{ chart_red_yearly }}" alt="Yearly Chart">
+            {% endif %}
         {% endif %}
     {% endblock %}
 </body>
