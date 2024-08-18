@@ -90,6 +90,11 @@
         color: var(--beige);
     }
 
+    .text {
+        text-transform: uppercase;
+        font-weight: var(--super-bold);
+    }
+
 form {
     margin-top: 75px;
     display: flex;
