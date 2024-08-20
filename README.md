@@ -10,7 +10,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;- Times it has been drawn<br>
 &nbsp;&nbsp;&nbsp;&nbsp;- Percentage of times it has been drawn<br>
 &nbsp;&nbsp;&nbsp;&nbsp;- Draughts (How many consecutive DRAWS your number has NOT been drawn)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;- Streaks (How many consecutive MONTHS you number HAS BEEN drawn)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- Streaks (How many consecutive MONTHS your number HAS BEEN drawn)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;- Monthly Data (How many times your number has been drawn in EACH of the 12 months)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;- Yearly Data (How many times your number has been drawn EACH year since 2016)<br>
 
@@ -18,4 +18,4 @@
 - Prediction model is currently in very early stages of development. 
 
 <STRONG>NOTES</STRONG><br>
-- The web app is still in development. It may get new features as time goes on. I haven't spent any time in design and mobile version of the app. Currently it is the best to view the app on laptops and desktops. 
+- The web app is still in development. It may get new features as time goes on. I haven't spent any time on design and mobile version of the app. Currently it is the best to view the app on laptops and desktops. 
