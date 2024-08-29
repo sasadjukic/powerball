@@ -16,11 +16,12 @@
 <body>
     <div class="header">
         <a href="{{ url_for('powerball.home') }}"><button>Home</button></a>
-        <a href="{{ url_for('powerball.rules') }}"><button>About</button></a>
         <a href="{{ url_for('powerball.all_time_winners') }}"><button>All Time Winners</button></a>
         <a href="{{ url_for('powerball.recent_winners') }}"><button>Recent Winners</button></a>
         <a href="{{ url_for('powerball.search') }}"><button>Search</button></a>
+        <a href="{{ url_for('powerball.odds') }}"><button>Odds</button></a>
         <a href="{{ url_for('powerball.predictions') }}"><button>Predictions</button></a>
+        <a href="{{ url_for('powerball.rules') }}"><button>About</button></a>
     </div>
     {% block content %}
     {% endblock %}

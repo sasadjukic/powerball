@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+
+<body>
+    {% block content %}
+        <!-- Create a table with 10 columns and 6 rows-->
+        <div class="odds-content">
+            <h3 class="odds-title">
+                tables are created from historical data and 10000 simulations<br>
+                <spam class="odds-minor">
+                    *please note that odss are rounded to 2 digits for clarity
+                </spam>
+            </h3>
+            <p class="odds-table-note">
+                Odds for each white number<br>
+                to be drawn for upcoming draw at <br>
+                2024-08-31<br>
+                <spam class="odds-minor">
+                    *Average chance for a white number to be pulled are 7.41%
+                </spam>
+            </p>
+            <table class="odds-table-white">
+                <tr>
+                    <th>Numbers (N)</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th>N</th>
+                    <td>{{ white_numbers[0] }}%</td>
+                    <td>{{ white_numbers[1] }}%</td>
+                    <td>{{ white_numbers[2] }}%</td>
+                    <td>{{ white_numbers[3] }}%</td>
+                    <td>{{ white_numbers[4] }}%</td>
+                    <td>{{ white_numbers[5] }}%</td>
+                    <td>{{ white_numbers[6] }}%</td>
+                    <td>{{ white_numbers[7] }}%</td>
+                    <td>{{ white_numbers[8] }}%</td>
+                    <td>{{ white_numbers[9] }}%</td>
+                </tr>
+                <tr>
+                    <th>N+10</th>
+                    <td>{{ white_numbers[10] }}%</td>
+                    <td>{{ white_numbers[11] }}%</td>
+                    <td>{{ white_numbers[12] }}%</td>
+                    <td>{{ white_numbers[13] }}%</td>
+                    <td>{{ white_numbers[14] }}%</td>
+                    <td>{{ white_numbers[15] }}5</td>
+                    <td>{{ white_numbers[16] }}%</td>
+                    <td>{{ white_numbers[17] }}%</td>
+                    <td>{{ white_numbers[18] }}%</td>
+                    <td>{{ white_numbers[19] }}%</td>
+                </tr>
+                <tr>
+                    <th>N+20</th>
+                    <td>{{ white_numbers[20] }}%</td>
+                    <td>{{ white_numbers[21] }}%</td>
+                    <td>{{ white_numbers[22] }}%</td>
+                    <td>{{ white_numbers[23] }}%</td>
+                    <td>{{ white_numbers[24] }}%</td>
+                    <td>{{ white_numbers[25] }}%</td>
+                    <td>{{ white_numbers[26] }}%</td>
+                    <td>{{ white_numbers[27] }}%</td>
+                    <td>{{ white_numbers[28] }}%</td>
+                    <td>{{ white_numbers[29] }}%</td>
+                </tr>
+                <tr>
+                    <th>N+30</th>
+                    <td>{{ white_numbers[30] }}%</td>
+                    <td>{{ white_numbers[31] }}%</td>
+                    <td>{{ white_numbers[32] }}%</td>
+                    <td>{{ white_numbers[33] }}%</td>
+                    <td>{{ white_numbers[34] }}%</td>
+                    <td>{{ white_numbers[35] }}%</td>
+                    <td>{{ white_numbers[36] }}%</td>
+                    <td>{{ white_numbers[37] }}%</td>
+                    <td>{{ white_numbers[38] }}%</td>
+                    <td>{{ white_numbers[39] }}%</td>
+                </tr>
+                <tr>
+                    <th>N+40</th>
+                    <td>{{ white_numbers[40] }}%</td>
+                    <td>{{ white_numbers[41] }}%</td>
+                    <td>{{ white_numbers[42] }}%</td>
+                    <td>{{ white_numbers[43] }}%</td>
+                    <td>{{ white_numbers[44] }}%</td>
+                    <td>{{ white_numbers[45] }}%</td>
+                    <td>{{ white_numbers[46] }}%</td>
+                    <td>{{ white_numbers[47] }}%</td>
+                    <td>{{ white_numbers[48] }}%</td>
+                    <td>{{ white_numbers[49] }}%</td>
+                </tr>
+                <tr>
+                    <th>N+50</th>
+                    <td>{{ white_numbers[50] }}%</td>
+                    <td>{{ white_numbers[51] }}%</td>
+                    <td>{{ white_numbers[52] }}%</td>
+                    <td>{{ white_numbers[53] }}%</td>
+                    <td>{{ white_numbers[54] }}%</td>
+                    <td>{{ white_numbers[55] }}%</td>
+                    <td>{{ white_numbers[56] }}%</td>
+                    <td>{{ white_numbers[57] }}%</td>
+                    <td>{{ white_numbers[58] }}%</td>
+                    <td>{{ white_numbers[59] }}%</td>
+                </tr>
+                <tr>
+                    <th>N+60</th>
+                    <td>{{ white_numbers[60] }}%</td>
+                    <td>{{ white_numbers[61] }}%</td>
+                    <td>{{ white_numbers[62] }}%</td>
+                    <td>{{ white_numbers[63] }}%</td>
+                    <td>{{ white_numbers[64] }}%</td>
+                    <td>{{ white_numbers[65] }}%</td>
+                    <td>{{ white_numbers[66] }}%</td>
+                    <td>{{ white_numbers[67] }}%</td>
+                    <td>{{ white_numbers[68] }}%</td>
+                    <td>*</td>
+                </tr>
+            </table>
+            <p class="odds-table-note">
+                Odds for each Powerball (red number)<br>
+                to be drawn for upcoming draw at <br>
+                2024-08-31<br>
+                <spam class="odds-minor">
+                    *Average chance for a Powerball (red number) to be pulled are 3.85%
+                </spam>
+            </p>
+            <table class="odds-table-red">
+                <tr>
+                    <th>Numbers (N)</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th>N</th>
+                    <td>{{ red_numbers[0] }}%</td>
+                    <td>{{ red_numbers[1] }}%</td>
+                    <td>{{ red_numbers[2] }}%</td>
+                    <td>{{ red_numbers[3] }}%</td>
+                    <td>{{ red_numbers[4] }}%</td>
+                    <td>{{ red_numbers[5] }}%</td>
+                    <td>{{ red_numbers[6] }}%</td>
+                    <td>{{ red_numbers[7] }}%</td>
+                    <td>{{ red_numbers[8] }}%</td>
+                    <td>{{ red_numbers[9] }}%</td>
+                </tr>
+                <tr>
+                    <th>N+10</th>
+                    <td>{{ red_numbers[10] }}%</td>
+                    <td>{{ red_numbers[11] }}%</td>
+                    <td>{{ red_numbers[12] }}%</td>
+                    <td>{{ red_numbers[13] }}%</td>
+                    <td>{{ red_numbers[14] }}%</td>
+                    <td>{{ red_numbers[15] }}%</td>
+                    <td>{{ red_numbers[16] }}%</td>
+                    <td>{{ red_numbers[17] }}%</td>
+                    <td>{{ red_numbers[18] }}%</td>
+                    <td>{{ red_numbers[19] }}%</td>
+                </tr>
+                <tr>
+                    <th>N+20</th>
+                    <td>{{ red_numbers[20] }}%</td>
+                    <td>{{ red_numbers[21] }}%</td>
+                    <td>{{ red_numbers[22] }}%</td>
+                    <td>{{ red_numbers[23] }}%</td>
+                    <td>{{ red_numbers[24] }}%</td>
+                    <td>{{ red_numbers[25] }}%</td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                </tr>
+            </table>
+        </div>
+    {% endblock %}
+</body>

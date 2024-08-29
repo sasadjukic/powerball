@@ -3,7 +3,31 @@
 <body>
     {% block content %}
         <div class="index-title">
-            <h3>PREDICTIONS PAGE IS UNDER CONSTRUCTION</h3>
+            <h3 class="predictions">
+                predictions page is for fun<br>
+                it is not meant to be used for gambling<br>
+                <spam class="predictions-minor">
+                    *predictions are based on historical data, recent trends and
+                    10000 Powerball simulations
+                </spam>
+            </h3>
+        </div>
+        <div class="recent-winners">
+            <p class="rc-title">Here are some numbers to consider<br>
+                for your next powerball draw for <br>
+                <span class="last-updated">2024-08-31</span>
+            </p>
+            <div class="nc-main-container">
+                {% for i in range(5) %}
+                    <p class="rc-numbers">Hand {{ i + 1 }}</p>
+                    <div class="nc-container">
+                    {% for j in range(5) %}
+                        <div class="number-circle">{{ white_numbers[i][j] }}</div>
+                    {% endfor %}
+                        <div class="number-circle" id="powerball">{{ red_numbers[i] }}</div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     {% endblock %}
 </body>

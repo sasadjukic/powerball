@@ -6,10 +6,10 @@
         <!-- write a form to call search function from app.py -->
         <form action="{{ url_for('powerball.search') }}" method="POST">
             <label for="number_input">Enter a powerball number</label>
-            <input type="number" id="number_input" name="number_input" min="1" max="69">
+            <input type="number" id="number_input" name="number_input" min="1" max="69" required>
             <br>
             <label for="date_input">Select date to start your search</label>
-            <input type="date" id="date_input" name="date_input" min="2015-10-04">
+            <input type="date" id="date_input" name="date_input" min="2015-10-04" required>
             <br>
             <input type="submit" id="search-button"value="Submit">
         </form>
@@ -45,8 +45,8 @@
                         </tr>
                     {% endif %}
                 </table>
-                <h4>DRAUGHTS</h4>
-                <table>
+                <h4 id="draught">DRAUGHTS</h4>
+                <table class="basic-stats">
                     <tr> 
                         <th>Number</th>
                         <th>Ball Type</th>
@@ -70,7 +70,7 @@
                 </table>
                 <p class="notes">*Draught refers to consecutive draws a number HAS NOT been drawn</p>
                 <h4>STREAKS</h4>
-                <table>
+                <table class="basic-stats">
                     <tr>
                         <th>Number</th>
                         <th>Ball Type</th>
