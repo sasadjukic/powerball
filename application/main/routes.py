@@ -129,6 +129,35 @@ def search():
     
     return render_template('search.html', number=number)
 
+@powerball.route('/odds', methods=['POST', 'GET'])
+def odds():
+    white_numbers = [6.73, 7.4, 8.06, 6.27, 6.17, 6.95, 6.46, 6.42, 7.26, 7.31, 
+                     7.02, 7.83, 5.58, 6.61, 6.75, 7.63, 6.99, 6.79, 7.82, 7.7, 9.13, 
+                     7.62, 7.7, 7.52, 5.93, 6.04, 8.23, 8.2, 6.32, 7.11, 6.99, 8.55, 
+                     8.86, 5.9, 6.37, 8.7, 7.63, 7.45, 8.43, 6.77, 7.13, 7.0, 6.86, 
+                     7.93, 7.17, 5.88, 7.87, 6.15, 5.63, 7.17, 6.3, 6.91, 7.74, 7.39, 
+                     6.45, 7.38, 7.26, 6.09, 7.88, 6.61, 8.95, 8.12, 8.76, 8.2, 6.51, 
+                     7.45, 7.85, 7.64, 8.53]
+    red_numbers = [
+                   3.69, 3.71, 3.73, 5.04, 4.1, 3.66, 3.47, 3.68, 4.46, 4.16, 
+                   3.58, 2.84, 3.61, 4.81, 3.13, 3.24, 3.62, 4.55, 3.61, 3.55, 
+                   4.42, 3.07, 3.41, 4.41, 4.13, 4.33
+                   ]
+    return render_template('odds.html', 
+                            white_numbers=white_numbers, 
+                            red_numbers=red_numbers
+                        )
+
 @powerball.route('/predictions', methods=['POST', 'GET'])
 def predictions():
-    return render_template('predictions.html')
+    white_numbers = [[12, 16, 36, 53, 59], 
+                     [3, 19, 21, 27, 61], 
+                     [7, 32, 39, 44, 49], 
+                     [2, 9, 20, 37, 63], 
+                     [10, 28, 40, 61, 63]
+                     ]
+    red_numbers = [18, 21, 24, 14, 2]
+    return render_template('predictions.html', 
+                            white_numbers=white_numbers, 
+                            red_numbers=red_numbers
+                            )
