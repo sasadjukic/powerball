@@ -33,6 +33,12 @@
         color: var(--main-color);
     }
 
+        .header button:hover {
+            background-color: var(--main-color);
+            color: var(--white);
+            cursor: pointer;
+        }
+
 .create {
     margin-top: 150px;
     display: flex;
@@ -88,6 +94,7 @@
 
     .rules-content p a {
         color: var(--beige);
+        cursor: pointer;
     }
 
     .text {
