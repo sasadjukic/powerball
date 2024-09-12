@@ -16,21 +16,21 @@ def generate_percentage(user_input: int, total_draws: int) -> float:
 def date_search(date_input: str, start_date: str) -> pd.DataFrame:
     return powerball_filtered[(powerball_filtered['Draw Date'] >= date_input) & (powerball_filtered['Draw Date'] <= start_date)]
 
-# find maximum and current DRAUGHTS where a user input number HAS NOT been drawn
+# find maximum and current DROUGHTS where a user input number HAS NOT been drawn
 # this refers to actual powerball draws, and draws are held every Monday, Wednesday and Saturday
-def get_draught(n: int, powerball: pd.DataFrame) -> list[int]:
+def get_drought(n: int, powerball: pd.DataFrame) -> list[int]:
     
-    current_draught = 0
-    max_draught = 0
+    current_drought = 0
+    max_drought = 0
     for bucket in powerball['Winning Numbers']:
         if n not in bucket:
-            current_draught += 1
+            current_drought += 1
         else:
-            if max_draught < current_draught:
-                max_draught = current_draught
-            current_draught = 0
+            if max_drought < current_drought:
+                max_drought = current_drought
+            current_drought = 0
 
-    return [max_draught, current_draught]
+    return [max_drought, current_drought]
 
 # find a STREAK (if there is any) where a user input number HAS BEEN drawn
 # a streak (in this case) refers to consecutive months the ball has been drawn, not consecutive draws
@@ -62,19 +62,19 @@ def get_streak(n: int, powerball: pd.DataFrame) -> list[int]:
     # returns max streak and current streak
     return [max_streak, streak]
 
-def get_red_draught(n: int, powerball: pd.DataFrame) -> list[int]:
+def get_red_drought(n: int, powerball: pd.DataFrame) -> list[int]:
     
-    current_draught = 0
-    max_draught = 0
+    current_drought = 0
+    max_drought = 0
     for number in powerball['Red Ball']:
         if n != number:
-            current_draught += 1
+            current_drought += 1
         else:
-            if max_draught < current_draught:
-                max_draught = current_draught
-            current_draught = 0
+            if max_drought < current_drought:
+                max_drought = current_drought
+            current_drought = 0
 
-    return [max_draught, current_draught]
+    return [max_drought, current_drought]
 
 def get_red_streak(n: int, powerball: pd.DataFrame) -> list[int]:
     streak = 0

@@ -45,30 +45,30 @@
                         </tr>
                     {% endif %}
                 </table>
-                <h4 id="draught">DRAUGHTS</h4>
+                <h4 id="drought">DROUGHTS</h4>
                 <table class="basic-stats">
                     <tr> 
                         <th>Number</th>
                         <th>Ball Type</th>
-                        <th>Max Drawing Draught*</th>
-                        <th>Current Drawing Draught*</th>
+                        <th>Max Drawing Drought*</th>
+                        <th>Current Drawing Drought*</th>
                     </tr>
                     <tr>
                         <td>{{ number }}</td>
                         <td>White Ball</td>
-                        <td>{{ white_draughts[0] }}</td>
-                        <td>{{ white_draughts[1] }}</td>
+                        <td>{{ white_droughts[0] }}</td>
+                        <td>{{ white_droughts[1] }}</td>
                     </tr>
                     {% if red_percentage %}
                         <tr>
                             <td>{{ number }}</td>
                             <td>Powerball</td>
-                            <td>{{ red_draught[0] }}</td>
-                            <td>{{ red_draught[1] }}</td>
+                            <td>{{ red_drought[0] }}</td>
+                            <td>{{ red_drought[1] }}</td>
                         </tr>
                     {% endif %}
                 </table>
-                <p class="notes">*Draught refers to consecutive draws a number HAS NOT been drawn</p>
+                <p class="notes">*Drought refers to consecutive draws a number HAS NOT been drawn</p>
                 <h4>STREAKS</h4>
                 <table class="basic-stats">
                     <tr>
