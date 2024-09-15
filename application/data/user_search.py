@@ -25,6 +25,8 @@ def get_drought(n: int, powerball: pd.DataFrame) -> list[int]:
     for bucket in powerball['Winning Numbers']:
         if n not in bucket:
             current_drought += 1
+            if max_drought < current_drought:
+                max_drought = current_drought
         else:
             if max_drought < current_drought:
                 max_drought = current_drought
@@ -69,6 +71,8 @@ def get_red_drought(n: int, powerball: pd.DataFrame) -> list[int]:
     for number in powerball['Red Ball']:
         if n != number:
             current_drought += 1
+            if max_drought < current_drought:
+                max_drought = current_drought
         else:
             if max_drought < current_drought:
                 max_drought = current_drought
