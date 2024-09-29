@@ -1,14 +1,14 @@
 
 # Display top ten winning Red Numbers of ALL TIME
 # All time meaning from October 4 2015 when Powerball rules changed
-from application.data.main_data import powerball_filtered
+from application.data.main_data import powerball
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 def all_time_red_winners():
     # Top 10 Red Numbers of ALL TIME
-    red_numbers = powerball_filtered['Red Ball'].value_counts().head(10)
+    red_numbers = powerball['Red Ball'].value_counts().head(10)
 
     # Convert red numbers index(keys) to list to use with matplotlib
     r_numbers = red_numbers.index.tolist()

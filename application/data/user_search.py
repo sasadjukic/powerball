@@ -1,24 +1,20 @@
 
-from application.data.main_data import powerball_filtered, powerball_exploded
+from application.data.main_data import powerball, powerball_exploded
 import pandas as pd
 
-def white_balls(n: int, powerball_user: pd.DataFrame) -> int:
-    powerball_explode = powerball_user.explode('Winning Numbers')
-    return (powerball_explode['Winning Numbers'] == n).sum()
+def white_balls(n: int) -> int:
+    #powerball_explode = powerball_user.explode('Winning Numbers')
+    return (powerball_exploded['Winning Numbers'] == n).sum()
 
-def red_balls(n: int, powerball_user: pd.DataFrame) -> int:
-    return (powerball_user['Red Ball'] == n).sum()
+def red_balls(n: int) -> int:
+    return (powerball['Red Ball'] == n).sum()
 
-def generate_percentage(user_input: int, total_draws: int) -> float:
-    return round((user_input / total_draws) * 100, 2)
-
-# create a function to generate new dataframe based on a date input from user
-def date_search(date_input: str, start_date: str) -> pd.DataFrame:
-    return powerball_filtered[(powerball_filtered['Draw Date'] >= date_input) & (powerball_filtered['Draw Date'] <= start_date)]
+def generate_percentage(user_input: int) -> float:
+    return round((user_input / powerball.shape[0]) * 100, 2)
 
 # find maximum and current DROUGHTS where a user input number HAS NOT been drawn
 # this refers to actual powerball draws, and draws are held every Monday, Wednesday and Saturday
-def get_drought(n: int, powerball: pd.DataFrame) -> list[int]:
+def get_drought(n: int) -> list[int]:
     
     current_drought = 0
     max_drought = 0
@@ -36,7 +32,7 @@ def get_drought(n: int, powerball: pd.DataFrame) -> list[int]:
 
 # find a STREAK (if there is any) where a user input number HAS BEEN drawn
 # a streak (in this case) refers to consecutive months the ball has been drawn, not consecutive draws
-def get_streak(n: int, powerball: pd.DataFrame) -> list[int]:
+def get_streak(n: int) -> list[int]:
     streak = 0
     max_streak = 0
     winning_month = 0
@@ -64,7 +60,7 @@ def get_streak(n: int, powerball: pd.DataFrame) -> list[int]:
     # returns max streak and current streak
     return [max_streak, streak]
 
-def get_red_drought(n: int, powerball: pd.DataFrame) -> list[int]:
+def get_red_drought(n: int) -> list[int]:
     
     current_drought = 0
     max_drought = 0
@@ -80,7 +76,7 @@ def get_red_drought(n: int, powerball: pd.DataFrame) -> list[int]:
 
     return [max_drought, current_drought]
 
-def get_red_streak(n: int, powerball: pd.DataFrame) -> list[int]:
+def get_red_streak(n: int) -> list[int]:
     streak = 0
     max_streak = 0
     winning_month = 0
@@ -114,7 +110,7 @@ def monthly_number(n: int):
     return all_winners
 
 def monthly_number_red(n:int):
-    r_number = powerball_filtered[powerball_filtered['Red Ball'] == n]
+    r_number = powerball[powerball['Red Ball'] == n]
     all_winners = r_number['Draw Date'].dt.month.tolist()
     return all_winners
 
@@ -124,7 +120,7 @@ def yearly_number(n: int):
     return all_winners
 
 def yearly_number_red(n:int):
-    r_number = powerball_filtered[powerball_filtered['Red Ball'] == n]
+    r_number = powerball[powerball['Red Ball'] == n]
     all_winners = r_number['Draw Date'].dt.year.tolist()
     return all_winners
 

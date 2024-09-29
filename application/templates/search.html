@@ -7,10 +7,6 @@
         <form action="{{ url_for('powerball.search') }}" method="POST">
             <label for="number_input">Enter a powerball number</label>
             <input type="number" id="number_input" name="number_input" min="1" max="69" required>
-            <br>
-            <label for="date_input">Select date to start your search</label>
-            <input type="date" id="date_input" name="date_input" min="2015-10-04" required>
-            <br>
             <input type="submit" id="search-button"value="Submit">
         </form>
         {% if white_percentage %}
@@ -27,8 +23,8 @@
                         <th>Percentage</th>
                     </tr>
                     <tr>
-                        <td>{{ time_period }}</td>
-                        <td>{{ last_updated }}</td>
+                        <td>{{ earliest }}</td>
+                        <td>{{ latest }}</td>
                         <td>{{ number }}</td>
                         <td>White Ball</td>
                         <td>{{ white_occurrences }}</td>
@@ -36,8 +32,8 @@
                     </tr>
                     {% if red_percentage %}
                         <tr>
-                            <td>{{ time_period }}</td>
-                            <td>{{ last_updated }}</td>
+                            <td>{{ earliest }}</td>
+                            <td>{{ latest }}</td>
                             <td>{{ number }}</td>
                             <td>Powerball</td>
                             <td>{{ red_occurrences }}</td>

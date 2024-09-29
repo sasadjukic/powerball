@@ -1,9 +1,8 @@
 
-import datetime
+
 from flask import render_template, Blueprint, request
-from application.data.main_data import latest, start_date
-from application.data.user_search import (generate_percentage, white_balls, 
-                                          red_balls, date_search,
+from application.data.main_data import latest, earliest, next_draw
+from application.data.user_search import (generate_percentage, white_balls, red_balls,
                                           get_streak, get_drought,
                                           get_red_drought, get_red_streak,
                                           monthly_number, monthly_number_red,
@@ -17,11 +16,10 @@ from application.data.all_time_winners_white import all_time_white_winners
 from application.data.all_time_winners_red import all_time_red_winners
 
 powerball = Blueprint('powerball', __name__)
-last_updated = latest
 
 @powerball.route('/')
 def home():
-    return render_template('index.html', last_updated=last_updated)
+    return render_template('index.html', latest=latest)
 
 @powerball.route('/rules', methods=['POST', 'GET'])
 def rules():
@@ -51,13 +49,6 @@ def search():
     if request.method == 'POST':
         # Get user input for a powerball number and date from which they want to start search
         number = int(request.form['number_input'])
-        time_period = request.form['date_input']
-
-        # call date_search function with time_period user input
-        date_frame = date_search(time_period, start_date)
-
-        # get total number of draws in user specified time frame
-        number_of_pulls = date_frame.shape[0]
 
         # if user number is greater or equall to 70, then flash error
         if number >= 70:
@@ -67,12 +58,12 @@ def search():
         # if user number is less than 70, then fetch white balls
         if number < 70:
             # Get number of times searched number appears
-            white_occurrences = white_balls(number, date_frame)
+            white_occurrences = white_balls(number)
             # Generate percentage
-            white_percentage = generate_percentage(white_occurrences, number_of_pulls)
+            white_percentage = generate_percentage(white_occurrences)
 
-            white_droughts = get_drought(number, date_frame)
-            white_streaks = get_streak(number, date_frame)
+            white_droughts = get_drought(number)
+            white_streaks = get_streak(number)
 
             monthly_winners = monthly_number(number)
             months = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0}
@@ -85,10 +76,10 @@ def search():
 
             # if user number is less than 26, then fetch both white and red balls 
             if number <= 26:
-                red_occurrences = red_balls(number, date_frame)
-                red_percentage = generate_percentage(red_occurrences, number_of_pulls)
-                red_drought = get_red_drought(number, date_frame)
-                red_streak = get_red_streak(number, date_frame)
+                red_occurrences = red_balls(number)
+                red_percentage = generate_percentage(red_occurrences)
+                red_drought = get_red_drought(number)
+                red_streak = get_red_streak(number)
 
                 monthly_winner_red = monthly_number_red(number)
                 months_red = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0}
@@ -108,8 +99,8 @@ def search():
                                         white_percentage=white_percentage, 
                                         white_droughts=white_droughts,
                                         white_streaks=white_streaks,
-                                        time_period=time_period,
-                                        last_updated=last_updated,
+                                        earliest=earliest,
+                                        latest=latest,
                                         chart_white_monthly = chart_white_monthly,
                                         chart_red_monthly = chart_red_monthly,
                                         chart_white_yearly = chart_white_yearly,
@@ -119,8 +110,8 @@ def search():
             return render_template('search.html', number=number, 
                                     white_occurrences=white_occurrences, 
                                     white_percentage=white_percentage, 
-                                    time_period=time_period,
-                                    last_updated=last_updated,
+                                    earliest=earliest,
+                                    latest=latest,
                                     white_droughts=white_droughts,
                                     white_streaks=white_streaks,
                                     chart_white_monthly = chart_white_monthly,
@@ -131,35 +122,40 @@ def search():
 
 @powerball.route('/odds', methods=['POST', 'GET'])
 def odds():
+    draw = next_draw()
     white_numbers = [
-                     7.12, 7.23, 8.29, 6.75, 6.43, 6.62, 6.78, 7.10, 7.08, 7.24, 7.22, 7.07, 
-                     5.26, 6.87, 7.09, 7.40, 6.71, 6.45, 7.70, 7.46, 9.31, 7.33, 8.54, 7.20, 
-                     6.80, 5.72, 8.61, 7.27, 6.19, 6.98, 6.51, 8.92, 8.56, 6.09, 6.01, 8.31, 
-                     7.98, 7.01, 8.20, 7.25, 6.35, 7.38, 6.62, 7.32, 7.55, 6.01, 7.94, 6.65, 
-                     5.46, 6.91, 6.10, 7.22, 7.77, 7.26, 6.64, 8.05, 6.87, 7.15, 8.28, 6.35, 
-                     9.08, 8.25, 9.01, 8.11, 5.91, 7.38, 7.23, 7.67, 8.82
+                     7.48, 7.34, 7.85, 6.42, 6.40, 7.25, 6.32, 6.40, 7.06, 7.56, 7.17, 
+                     7.38, 5.05, 6.07, 7.13, 7.48, 6.74, 6.80, 7.97, 7.43, 8.49, 6.50, 
+                     8.27, 7.85, 6.62, 6.07, 9.16, 7.86, 6.12, 6.91, 6.80, 8.12, 9.06, 
+                     6.35, 6.58, 8.82, 7.41, 6.70, 8.29, 7.65, 7.15, 6.67, 6.58, 7.51, 
+                     7.17, 6.31, 8.58, 6.01, 5.60, 7.23, 6.10, 6.65, 8.11, 6.96, 7.16, 
+                     7.32, 6.77, 6.97, 7.99, 6.71, 8.54, 7.97, 8.86, 8.29, 6.42, 7.29, 
+                     7.06, 7.95, 9.14
                      ]
     red_numbers = [
-                   3.66, 3.44, 3.60, 5.00, 4.45, 3.65, 3.47, 3.54, 4.25, 3.84, 3.54, 3.29, 
-                   3.50, 4.24, 3.21, 3.19, 3.08, 5.14, 3.91, 4.01, 5.15, 3.07, 3.58, 4.47, 
-                   3.79, 3.93
+                   4.13, 3.84, 3.79, 5.02, 4.12, 3.69, 3.69, 3.89, 3.90, 3.92, 3.69, 
+                   2.70, 3.87, 4.59, 2.72, 3.19, 3.17, 4.34, 3.68, 3.85, 5.05, 3.16, 
+                   3.34, 4.65, 4.20, 3.81
                    ]
     return render_template('odds.html', 
+                            draw=draw,
                             white_numbers=white_numbers, 
                             red_numbers=red_numbers
                         )
 
 @powerball.route('/predictions', methods=['POST', 'GET'])
 def predictions():
+    draw = next_draw()
     white_numbers = [
-                     [10, 27, 55, 59, 67], 
-                     [4, 21, 23, 36, 44], 
-                     [33, 45, 53, 61, 66], 
-                     [6, 11, 18, 44, 47], 
-                     [7, 23, 31, 35, 69]
+                     [18, 27, 33, 63, 67], 
+                     [4, 36, 53, 59, 59], 
+                     [9, 42, 47, 54, 65], 
+                     [19, 24, 32, 56, 58], 
+                     [8, 14, 26, 32, 41]
                      ]
-    red_numbers = [4, 11, 23, 7, 15]
-    return render_template('predictions.html', 
+    red_numbers = [2, 15, 25, 9, 18]
+    return render_template('predictions.html',
+                            draw=draw, 
                             white_numbers=white_numbers, 
                             red_numbers=red_numbers
                             )

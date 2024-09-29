@@ -26,8 +26,8 @@
 
     .header button {
         padding: 10px;
-        margin: 5px;
-        border-radius: 10px;
+        margin: 2.5px;
+        border-radius: 5px;
         font-family: var(--main-font);
         background-color: var(--beige);
         color: var(--main-color);
