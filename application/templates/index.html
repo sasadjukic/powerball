@@ -4,14 +4,15 @@
 <body>
     {% block content %}
         <div class="index-title">
-            <h3>
+            <p>
                 This web page displays Powerball Data
-            </h3>
-            <h6>
+            </p>
+            <p><span class="index-note">
                 *Please Note. Some features are still
                 in early development
-            </h6>
-            <h4>Last updated: <span class="last-updated">{{ latest }}<span></h4>
+               </span>
+            </p>
+            <p>Last updated: <span class="last-updated">{{ latest }}</span></p>
         </div>
         <div class="create">Created by Sasa Djukic</div>
     {% endblock %}
