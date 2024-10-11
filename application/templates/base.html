@@ -16,11 +16,29 @@
 <body>
     <div class="header">
         <a href="{{ url_for('powerball.home') }}"><button>Home</button></a>
-        <a href="{{ url_for('powerball.all_time_winners') }}"><button>All Time Winners</button></a>
-        <a href="{{ url_for('powerball.recent_winners') }}"><button>Recent Winners</button></a>
-        <a href="{{ url_for('powerball.search') }}"><button>Search</button></a>
-        <a href="{{ url_for('powerball.odds') }}"><button>Odds</button></a>
-        <a href="{{ url_for('powerball.predictions') }}"><button>Predictions</button></a>
+        <div class="dropdown">
+            <button>Winning Numbers</button>
+            <div class="dropdown-content">
+                <a href="{{ url_for('powerball.all_time_winners') }}">Top All Time</a>
+                <a href="{{ url_for('powerball.top_6_months') }}">Top Last 6 Months</a>
+                <a href="{{ url_for('powerball.recent_winners') }}">Recent Winners</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button>Stats</button>
+            <div class="dropdown-content">
+                <a href="{{ url_for('powerball.search') }}">Per Number</a>
+                <a href="#">Winning Patterns</a>
+                <a href="#">Trends</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button>Simulation</button>
+            <div class="dropdown-content">
+                <a href="{{ url_for('powerball.odds') }}">Odds</a>
+                <a href="{{ url_for('powerball.predictions') }}">Predictions</a>
+            </div>
+        </div>
         <a href="{{ url_for('powerball.rules') }}"><button>About</button></a>
     </div>
     {% block content %}

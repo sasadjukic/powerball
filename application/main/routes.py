@@ -14,6 +14,8 @@ from application.data.user_search_yearly_red import red_yearly_winners
 from application.data.recent_winners import get_recent
 from application.data.all_time_winners_white import all_time_white_winners
 from application.data.all_time_winners_red import all_time_red_winners
+from application.data.recent_winners_white import recent_white_winners
+from application.data.recent_winners_red import recent_red_winners
 
 powerball = Blueprint('powerball', __name__)
 
@@ -33,6 +35,16 @@ def all_time_winners():
     return render_template('winners.html', 
                             white_all_time=white_all_time, 
                             red_all_time=red_all_time
+                            )
+
+@powerball.route('/top_6_months', methods=['POST', 'GET'])
+def top_6_months():
+    # Generate bar charts for top 6 months
+    white_top_6 = recent_white_winners()
+    red_top_6 = recent_red_winners()
+    return render_template('winners_6m.html', 
+                            white_top_6=white_top_6, 
+                            red_top_6=red_top_6
                             )
 
 @powerball.route('/recent_winners', methods=['POST', 'GET'])
@@ -120,22 +132,31 @@ def search():
     
     return render_template('search.html', number=number)
 
+
+@powerball.route('/simple_patterns', methods=['POST', 'GET'])
+def simple_patterns():
+    pass
+
+@powerball.route('/trends', methods=['POST', 'GET'])
+def trends():
+    pass
+
 @powerball.route('/odds', methods=['POST', 'GET'])
 def odds():
     draw = next_draw()
     white_numbers = [
-                     7.42, 7.00, 7.35, 6.46, 6.66, 6.95, 6.53, 7.31, 7.07, 7.24, 7.37, 
-                     7.68, 5.40, 6.35, 6.78, 7.09, 7.13, 6.96, 7.88, 7.11, 8.81, 6.98, 
-                     8.09, 6.94, 6.66, 6.20, 8.71, 7.95, 5.97, 7.33, 7.24, 8.40, 8.62, 
-                     6.34, 6.55, 8.50, 8.23, 7.06, 7.81, 7.40, 6.84, 7.58, 6.43, 7.72, 
-                     7.40, 6.30, 7.42, 6.26, 5.49, 7.14, 6.22, 7.26, 7.49, 7.18, 7.02, 
-                     7.63, 7.20, 6.54, 7.68, 6.36, 9.08, 7.78, 8.73, 8.78, 5.70, 6.89, 
-                     7.51, 7.78, 9.06
+                     6.76, 7.79, 7.93, 6.32, 6.08, 7.31, 6.80, 6.90, 7.22, 7.28, 7.13, 
+                     7.82, 5.35, 6.12, 6.93, 7.20, 7.29, 7.03, 7.52, 7.48, 9.66, 7.04, 
+                     8.12, 7.22, 6.47, 5.67, 8.44, 8.25, 6.20, 7.34, 6.47, 8.48, 8.58, 
+                     5.81, 6.00, 8.77, 8.07, 7.83, 8.12, 7.19, 6.34, 7.04, 6.52, 7.37, 
+                     7.47, 5.64, 7.68, 6.12, 5.96, 7.12, 6.21, 7.14, 7.92, 7.10, 6.77, 
+                     7.45, 6.96, 6.61, 8.20, 5.95, 8.76, 8.06, 8.86, 8.21, 6.31, 7.54, 
+                     7.38, 7.99, 9.33
                      ]
     red_numbers = [
-                   3.99, 3.08, 4.01, 4.67, 4.02, 3.75, 3.75, 3.93, 4.15, 3.93, 3.86, 
-                   3.03, 3.47, 4.46, 2.81, 3.25, 3.23, 4.97, 3.71, 3.46, 4.80, 3.20, 
-                   3.62, 4.47, 4.39, 3.99
+                   3.54, 3.69, 3.85, 4.80, 4.14, 3.79, 3.76, 3.86, 4.10, 4.21, 3.54, 
+                   3.05, 3.89, 4.20, 3.17, 2.88, 3.32, 4.17, 3.78, 3.66, 4.66, 3.48, 
+                   3.73, 4.74, 4.14, 3.85
                    ]
     return render_template('odds.html', 
                             draw=draw,
@@ -147,13 +168,13 @@ def odds():
 def predictions():
     draw = next_draw()
     white_numbers = [
-                     [22, 48, 53, 57, 64], 
-                     [1, 23, 36, 59, 67], 
-                     [6, 12, 39, 42, 43], 
-                     [11, 47, 50, 61, 69], 
-                     [33, 43, 44, 52, 68]
+                     [11, 27, 45, 64, 69], 
+                     [7, 31, 53, 54, 57], 
+                     [4, 16, 37, 43, 67], 
+                     [19, 20, 24, 30, 42], 
+                     [1, 22, 41, 58, 61]
                      ]
-    red_numbers = [2, 15, 23, 8, 11]
+    red_numbers = [3, 15, 24, 5, 18]
     return render_template('predictions.html',
                             draw=draw, 
                             white_numbers=white_numbers, 

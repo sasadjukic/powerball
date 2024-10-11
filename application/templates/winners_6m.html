@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+<body>
+    {% block content %}
+        {% if white_top_6 %}
+            <img src="data:image/png;base64,{{ white_top_6 }}" alt="Bar Chart">
+        {% endif %}
+        {% if red_top_6 %}
+            <img src="data:image/png;base64,{{ red_top_6 }}" alt="Bar Chart">
+        {% endif %}       
+    {% endblock %}
+</body>
