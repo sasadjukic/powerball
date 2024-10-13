@@ -28,7 +28,8 @@
             <button>Stats</button>
             <div class="dropdown-content">
                 <a href="{{ url_for('powerball.search') }}">Per Number</a>
-                <a href="#">Winning Patterns</a>
+                <a href="{{ url_for('powerball.winning_hands_white') }}">Winning Hands White</a>
+                <a href="{{ url_for('powerball.winning_hands_red') }}">Winning Hands Red</a>
                 <a href="#">Trends</a>
             </div>
         </div>

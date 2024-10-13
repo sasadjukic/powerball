@@ -1,0 +1,110 @@
+
+{% extends 'base.html' %}
+<body>
+    {% block content %}
+        <div class="hands-content-red">
+            <h4>Splits</h4>
+            <p>
+                Unlike our white numbers, our Powerball (red) numbers go only up to 26. Our splits
+                will be two equall sets of numbers. LOWER set will contain numbers from {1, 2, 3,...13},
+                while our HIGHER set will be from {14, 15, 16,... 26}
+                <br>
+                <table class="odds-table-white">
+                    <tr>
+                        <th>Splits</th>
+                        <th>Times Drawn</th>
+                        <th>Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>Lower{1-13}</td>
+                        <td>549</td>
+                        <td>49.86 %</td>
+                    </tr>
+                    <tr>
+                        <td>Higher{14-26}</td>
+                        <td>552</td>
+                        <td>50.14 %</td>
+                    </tr>
+                </table>
+            
+                Now let's see how lower numbers rate against higher numbers in recent (last 24) draws, so we can compare to all time stats<br>
+             
+                <table class="odds-table-white">
+                    <tr>
+                        <th>Splits</th>
+                        <th>Times Drawn</th>
+                        <th>Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>Lower{1-13}</td>
+                        <td>8</td>
+                        <td>33.33 %</td>
+                    </tr>
+                    <tr>
+                        <td>Higher{14-26}</td>
+                        <td>16</td>
+                        <td>66.67 %</td>
+                    </tr>
+                </table>
+       
+            </p>
+            <h4>Sets</h4>
+            <p>
+                This time we will have 3 unequall sets of numbers. This isn't ideal,
+                but we will still be able to compare recent trends with all time stats. Our sets will look like this:<br>
+                <br>
+                ONES = {1, 2, 3, 4, 5, 6, 7, 8, 9}<br>
+                TENS = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19}<br>
+                TWENTIES = {20, 21, 22, 23, 24, 25, 26}<br>
+                <br>
+                <table class="odds-table-white">
+                    <tr>
+                        <th>Sets</th>
+                        <th>Times Drawn</th>
+                        <th>Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>ONES</td>
+                        <td>391</td>
+                        <td>35.51 %</td>
+                    </tr>
+                    <tr>
+                        <td>TENS</td>
+                        <td>403</td>
+                        <td>36.60 %</td>
+                    </tr>
+                    <tr>
+                        <td>TWENTIES</td>
+                        <td>307</td>
+                        <td>27.88 %</td>
+                    </tr>
+                </table>
+                <br>
+                This is how our numbers look in the last 24 draws
+                <br>
+                <table class="odds-table-white">
+                    <tr>
+                        <th>Sets</th>
+                        <th>Times Drawn</th>
+                        <th>Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>ONES</td>
+                        <td>6</td>
+                        <td>25.00 %</td>
+                    </tr>
+                    <tr>
+                        <td>TENS</td>
+                        <td>9</td>
+                        <td>37.50 %</td>
+                    </tr>
+                    <tr>
+                        <td>TWENTIES</td>
+                        <td>9</td>
+                        <td>37.50 %</td>
+                    </tr>
+                </table>
+            </p>
+        </div>
+    {% endblock %}
+</body>
