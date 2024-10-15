@@ -3,13 +3,24 @@
 <body>
     {% block content %}
         <div class="hands-content-red">
+            <p>
+                <span class="hands-minor">
+                    *This page breaks down winning RED (Powerball) numbers in Powerball
+                </span>
+            </p>
+            <p>
+                Unlike our white numbers, our Powerball (red) numbers go only up to 26, 
+                and we have only one winning red number. We can't avoid superstitious 
+                birthday people, but we can still play with our numbers and get some
+                interesting statistics.
+            </p>
             <h4>Splits</h4>
             <p>
-                Unlike our white numbers, our Powerball (red) numbers go only up to 26. Our splits
-                will be two equall sets of numbers. LOWER set will contain numbers from {1, 2, 3,...13},
-                while our HIGHER set will be from {14, 15, 16,... 26}
+                Let's start with easy stuff and split our red numbers to two equall sets. 
+                LOWER set will get numbers {1, 2, 3,...13}, while our HIGHER 
+                set will contain numbers {14, 15, 16,... 26}
                 <br>
-                <table class="odds-table-white">
+                <table class="probability-table-red">
                     <tr>
                         <th>Splits</th>
                         <th>Times Drawn</th>
@@ -18,18 +29,19 @@
                     <tr>
                         <td>Lower{1-13}</td>
                         <td>549</td>
-                        <td>49.86 %</td>
+                        <td>49.82 %</td>
                     </tr>
                     <tr>
                         <td>Higher{14-26}</td>
-                        <td>552</td>
-                        <td>50.14 %</td>
+                        <td>553</td>
+                        <td>50.18 %</td>
                     </tr>
                 </table>
-            
-                Now let's see how lower numbers rate against higher numbers in recent (last 24) draws, so we can compare to all time stats<br>
+                
+                We've learned already that recent trends can deviate fom all time stats.
+                So, let's see how lower numbers rate against higher numbers in recent (last 24) draws, so we can compare to all time stats<br>
              
-                <table class="odds-table-white">
+                <table class="probability-table-red">
                     <tr>
                         <th>Splits</th>
                         <th>Times Drawn</th>
@@ -37,27 +49,29 @@
                     </tr>
                     <tr>
                         <td>Lower{1-13}</td>
-                        <td>8</td>
-                        <td>33.33 %</td>
+                        <td>7</td>
+                        <td>29.17 %</td>
                     </tr>
                     <tr>
                         <td>Higher{14-26}</td>
-                        <td>16</td>
-                        <td>66.67 %</td>
+                        <td>17</td>
+                        <td>70.83 %</td>
                     </tr>
                 </table>
        
             </p>
             <h4>Sets</h4>
             <p>
-                This time we will have 3 unequall sets of numbers. This isn't ideal,
-                but we will still be able to compare recent trends with all time stats. Our sets will look like this:<br>
+                If we follow the same logic we applied to our white numbers, our
+                red numbers can be sorted into 3 unequall sets of numbers. 
+                This isn't ideal, but we will still be able to compare recent 
+                trends with all time stats. Our sets of red balls will look like this:<br>
                 <br>
                 ONES = {1, 2, 3, 4, 5, 6, 7, 8, 9}<br>
                 TENS = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19}<br>
                 TWENTIES = {20, 21, 22, 23, 24, 25, 26}<br>
                 <br>
-                <table class="odds-table-white">
+                <table class="probability-table-red">
                     <tr>
                         <th>Sets</th>
                         <th>Times Drawn</th>
@@ -66,23 +80,23 @@
                     <tr>
                         <td>ONES</td>
                         <td>391</td>
-                        <td>35.51 %</td>
+                        <td>35.48 %</td>
                     </tr>
                     <tr>
                         <td>TENS</td>
-                        <td>403</td>
-                        <td>36.60 %</td>
+                        <td>404</td>
+                        <td>36.66 %</td>
                     </tr>
                     <tr>
                         <td>TWENTIES</td>
                         <td>307</td>
-                        <td>27.88 %</td>
+                        <td>27.86 %</td>
                     </tr>
                 </table>
                 <br>
                 This is how our numbers look in the last 24 draws
                 <br>
-                <table class="odds-table-white">
+                <table class="probability-table-red">
                     <tr>
                         <th>Sets</th>
                         <th>Times Drawn</th>
@@ -104,6 +118,11 @@
                         <td>37.50 %</td>
                     </tr>
                 </table>
+            </p>
+            <p>
+                <span class="hands-minor">
+                    *This page will receive further updates
+                </span>
             </p>
         </div>
     {% endblock %}

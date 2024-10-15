@@ -3,16 +3,31 @@
 <body>
     {% block content %}
         <div class="hands-content">
+            <p>
+                <span class="hands-minor">
+                    *This page breaks down winning WHITE numbers in Powerball
+                </span>
+            </p>
+            <p>
+                There are superstitious people who choose their lottery numbers
+                based on their own birthdays, as well as birthdays of their family and friends.
+                There are people who want to avoid superstitious people and choose only
+                numbers higher than 31.<br>
+                <br>                
+                Is it possible to check, which one of the two groups of people have a higher chance
+                to win Powerball? Not sure if I can answer that question, but let's 
+                use our superstitions to start simple and split our white powerball 
+                numbers in half. This way we can see how lower numbers compare to higher numbers.<br>
+                <br>
+            </p>
             <h4>Splits</h4>
             <p>
-                I'd like to start simple and split our white powerball numbers in half. This way
-                we can see how lower numbers compare to higher numbers. In our set 
-                of 1-69 our median is 35. Thirty Five sits straight in the middle, and I will 
-                for this purpose divide our white numbers into sets of {1, 2, 3,...34} 
+                White Powerball numbers range from 1 to 69. In our set of 1-69, median is 35. Thirty Five sits straight in the middle, and I will 
+                for this purpose divide our white numbers into two sets of {1, 2, 3,...34} 
                 and {36, 37, 38,...69}. I'll omit 35 on purpose from both sets for this 
                 case. If you want to see more detailed stats for any powerball number, 
-                including 35 check this page -> <a href="{{ url_for('powerball.search') }}">PAGE</a><br>
-                <table class="odds-table-white">
+                including 35 check this page -> <a href="{{ url_for('powerball.search') }}">STATS PER NUMBER</a><br>
+                <table class="probability-table-white">
                     <tr>
                         <th>Splits</th>
                         <th>Times Drawn</th>
@@ -20,19 +35,27 @@
                     </tr>
                     <tr>
                         <td>Lower{1-34}</td>
-                        <td>2684</td>
-                        <td>48.76 %</td>
+                        <td>2687</td>
+                        <td>48.77 %</td>
                     </tr>
                     <tr>
                         <td>Higher{36-69}</td>
-                        <td>2752</td>
-                        <td>49.99 %</td>
+                        <td>2754</td>
+                        <td>49.98 %</td>
                     </tr>
                 </table>
-            
-                Now let's see how lower numbers rate against higher numbers in recent (last 24) draws, so we can compare to all time stats<br>
-             
-                <table class="odds-table-white">
+                <p class="probaility-p-insert">
+                    All time records can sometimes be misleading. Just take a look at WINNING NUMBERS tab on this page
+                    and compare the all time stats to the records in the last 6 months.<br>
+                    <br> 
+                    Recent trends can swing away from the all time stats. 
+                    Word RECENT is subjective, but after observing Powerball winning numbers I have settled to 
+                    define recent as the last 24 draws.<br>
+                    <br>
+                    Now let's see how lower numbers rate against higher numbers in RECENT 
+                    (last 24) draws, so we can compare them to the all time stats
+                </p>
+                <table class="probability-table-white">
                     <tr>
                         <th>Splits</th>
                         <th>Times Drawn</th>
@@ -40,23 +63,23 @@
                     </tr>
                     <tr>
                         <td>Lower{1-34}</td>
-                        <td>69</td>
-                        <td>57.50 %</td>
+                        <td>67</td>
+                        <td>55.83 %</td>
                     </tr>
                     <tr>
                         <td>Higher{36-69}</td>
-                        <td>50</td>
-                        <td>41.67 %</td>
+                        <td>52</td>
+                        <td>43.33 %</td>
                     </tr>
                 </table>
        
             </p>
             <h4>Sets</h4>
             <p>
-                After splitting numbers in half I'd like to go a bit further. Looking at 
-                our 69 numbers we can divide them into 7 almost equal sets. 6 of these 
+                After splitting numbers in half, I'd like to go a bit further. Looking at 
+                our 69 numbers we can divide them into 7 almost equal sets. 6 of the 
                 7 sets will have 10 numbers while the set with single digit numbers 
-                will contain 9 numbers. For the sake of simplicity I will name these 
+                will contain 9 numbers. For the sake of simplicity, I will name these 
                 sets as follows:<br>
                 <br>
                 ONES = {1, 2, 3, 4, 5, 6, 7, 8, 9}<br>
@@ -69,7 +92,7 @@
                 <br>
                 Now let's check which set gets their numbers drawn the most in Powerball
               
-                <table class="odds-table-white">
+                <table class="probability-table-white">
                     <tr>
                         <th>Sets</th>
                         <th>Times Drawn</th>
@@ -78,55 +101,60 @@
                     <tr>
                         <td>ONES</td>
                         <td>693</td>
-                        <td>12.59 %</td>
+                        <td>12.58 %</td>
                     </tr>
                     <tr>
                         <td>TENS</td>
-                        <td>764</td>
-                        <td>13.88 %</td>
+                        <td>766</td>
+                        <td>13.90 %</td>
                     </tr>
                     <tr>
                         <td>TWENTIES</td>
                         <td>816</td>
-                        <td>14.82 %</td>
+                        <td>14.81 %</td>
                     </tr>
                     <tr>
                         <td>THIRTIES</td>
-                        <td>835</td>
+                        <td>836</td>
                         <td>15.17 %</td>
                     </tr>
                     <tr>
                         <td>FORTIES</td>
                         <td>755</td>
-                        <td>13.71 %</td>
+                        <td>13.70 %</td>
                     </tr>
                     <tr>
                         <td>FIFTIES</td>
                         <td>781</td>
-                        <td>14.19 %</td>
+                        <td>14.17 %</td>
                     </tr>
                     <tr>
                         <td>SIXTIES</td>
-                        <td>861</td>
-                        <td>15.64 %</td>
+                        <td>863</td>
+                        <td>15.66 %</td>
                     </tr>
                 </table>
         
             </p>
             <h4>Winning Hands</h4>
             <p>
-                So, why did I do all these separations of numbers? If you observe winning 
+                So, why did I bother to create sets of numbers? If you observe winning 
                 numbers you'll quickly notice something. Quite often a few or more 
-                winning numbers belong to the same set. For example, a winning hand 
-                from <span class="text">Monday, September 2nd 2024</span> had following WHITE 
+                winning numbers belong to the same set.<br>
+                <br>
+                For example, a winning hand 
+                from <span class="text">Monday, September 2nd 2024</span> had following 
                 numbers 8, <span class="text">42, 46, 48,</span> 53. 
                 It is easy to notice that 3 out of 5 numbers belong to our established set 
-                of FORTIES. A winning hand from <span class="text">Monday, August 26th 2024 </span>
-                had following WHITE numbers <span class="text">2, 4,</span> 23, 
+                of FORTIES.<br>
+                <br>
+                A winning hand from <span class="text">Monday, August 26th 2024 </span>
+                had following numbers <span class="text">2, 4,</span> 23, 
                 <span class="text">68, 69</span>. Again, it is easy to spot that 2 of 
-                our numbers belong to the set of ONES and the other 2 belong to the set of SIXTIES. Hopefully, this 
-                little introduction will help you with what follows. In an attempt to make this 
-                easier for everyone to understand, I will use the naming convention from Poker 
+                our numbers belong to the set of ONES and the other 2 belong to the set of SIXTIES.<br>
+                <br>
+                Hopefully, this little introduction will help you with what follows. In an attempt to make this 
+                easier for everyone to understand, I will modify the naming convention from Poker 
                 and establish the following WINNING HANDS:<br>
                 <br>
                 SINGLES = (example: 2, 13, 34, 56, 61)<br>
@@ -138,7 +166,7 @@
                 <br>
                 Now, let's see which WINNING HAND occurs the most in Powerball
              
-                <table class="odds-table-white">
+                <table class="probability-table-white">
                     <tr>
                         <th>Hands</th>
                         <th>Times Drawn</th>
@@ -147,22 +175,22 @@
                     <tr>
                         <td>SINGLES</td>
                         <td>182</td>
-                        <td>16.53 %</td>
+                        <td>16.52 %</td>
                     </tr>
                     <tr>
                         <td>PAIR</td>
                         <td>564</td>
-                        <td>51.23 %</td>
+                        <td>51.18 %</td>
                     </tr>
                     <tr>
                         <td>TWO PAIRS</td>
-                        <td>211</td>
-                        <td>19.16 %</td>
+                        <td>212</td>
+                        <td>19.24 %</td>
                     </tr>
                     <tr>
                         <td>THREE OF SET</td>
                         <td>134</td>
-                        <td>12.17 %</td>
+                        <td>12.16 %</td>
                     </tr>
                     <tr>
                         <td>POKER</td>
@@ -175,6 +203,11 @@
                         <td>0 %</td>
                     </tr>
                 </table>
+            </p>
+            <p>
+                <span class="hands-minor">
+                    *This page will receive further updates
+                </span>
             </p>
         </div>
     {% endblock %}

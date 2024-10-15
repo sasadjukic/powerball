@@ -239,7 +239,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: 170%;
+    top: 210%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 900px;
@@ -263,13 +263,18 @@ form {
         margin: 15px 15px;
     }
 
+    .hands-minor {
+        text-transform: uppercase;
+        font-size: 1rem;
+    }
+
 .hands-content-red {
         position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        top: 100%;
+        top: 110%;
         left: 50%;
         transform: translate(-50%, -50%);
         max-width: 900px;
@@ -369,7 +374,7 @@ img {
             color: var(--beige);
         }
 
-.odds-content {
+.probability-content {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -379,25 +384,25 @@ img {
     color: var(--main-color);
 }
 
-    .odds-title {
+    .probability-title {
         text-transform: uppercase;
         font-family: var(--main-font);
         font-size: 1.5rem;
         margin-bottom: 50px;
     }
 
-        .odds-minor {
+        .probability-minor {
             font-size: 0.75rem;
             font-weight: var(--bold);
         }
 
-    .odds-table-note {
+    .probability-table-note {
         font-size: 1rem;
         font-weight: bold;
         text-transform: uppercase;
     }
 
-    .odds-table-white, .odds-table-red {
+    .probability-table-white, .probability-table-red {
         margin-top: 50px;
         margin-bottom: 50px;
         font-size: 1.25rem;
@@ -405,13 +410,13 @@ img {
         text-transform: uppercase;
     }
 
-    /* first row and first column of odds-table-white to be beige color*/
-    .odds-table-white tr:first-child, .odds-table-white th:first-child {
+    /* first row and first column of probability-table-white to be beige color*/
+    .probability-table-white tr:first-child, .probability-table-white th:first-child {
         background-color: var(--beige);
     }
 
-    /* first row and first column of odds-table-red to be main color*/
-    .odds-table-red tr:first-child, .odds-table-red th:first-child {
+    /* first row and first column of probability-table-red to be main color*/
+    .probability-table-red tr:first-child, .probability-table-red th:first-child {
         background-color: var(--main-color);
         color: var(--white);
     }
