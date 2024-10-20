@@ -1,0 +1,373 @@
+
+{% extends 'base.html' %}
+
+<body>
+    {% block content %}
+        <div class="trends-content">
+            <p>
+                <span class="hands-minor">
+                    *This page shows TRENDING numbers in Powerball
+                </span>
+            </p>
+            <p>
+                Defining time spans to display recent trends can sometimes be a tricky job.
+                There are 3 Powerball draws per week, so the question may be - how far back
+                should we go to display trends?
+            </p>
+            <p>
+                As mentioned on other pages, I decided to go 24 draws back for the most recent
+                trends, and 6 months back to give more perspective to the data displayed here.
+                You can also see YEARLY stats for any Powerball number -> 
+                <a href="{{ url_for('powerball.search') }}">STATS PER NUMBER</a>
+            </p>
+            <p>
+                <span class="trends-table-title">
+                    WHITE NUMBERS
+                </span>
+            </p>
+            <p>
+                First, I'd like to show you how many times each WHITE number has been drawn
+                in the last 6 months
+            </p>
+            <table class="probability-table-white">
+                <tr>
+                    <th>Numbers (N)</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th>N</th>
+                    <td>{{ white_numbers_6[0] }}</td>
+                    <td>{{ white_numbers_6[1] }}</td>
+                    <td>{{ white_numbers_6[2] }}</td>
+                    <td>{{ white_numbers_6[3] }}</td>
+                    <td>{{ white_numbers_6[4] }}</td>
+                    <td>{{ white_numbers_6[5] }}</td>
+                    <td>{{ white_numbers_6[6] }}</td>
+                    <td>{{ white_numbers_6[7] }}</td>
+                    <td>{{ white_numbers_6[8] }}</td>
+                    <td>{{ white_numbers_6[9] }}</td>
+                </tr>
+                <tr>
+                    <th>N+10</th>
+                    <td>{{ white_numbers_6[10] }}</td>
+                    <td>{{ white_numbers_6[11] }}</td>
+                    <td>{{ white_numbers_6[12] }}</td>
+                    <td>{{ white_numbers_6[13] }}</td>
+                    <td>{{ white_numbers_6[14] }}</td>
+                    <td>{{ white_numbers_6[15] }}</td>
+                    <td>{{ white_numbers_6[16] }}</td>
+                    <td>{{ white_numbers_6[17] }}</td>
+                    <td>{{ white_numbers_6[18] }}</td>
+                    <td>{{ white_numbers_6[19] }}</td>
+                </tr>
+                <tr>
+                    <th>N+20</th>
+                    <td>{{ white_numbers_6[20] }}</td>
+                    <td>{{ white_numbers_6[21] }}</td>
+                    <td>{{ white_numbers_6[22] }}</td>
+                    <td>{{ white_numbers_6[23] }}</td>
+                    <td>{{ white_numbers_6[24] }}</td>
+                    <td>{{ white_numbers_6[25] }}</td>
+                    <td>{{ white_numbers_6[26] }}</td>
+                    <td>{{ white_numbers_6[27] }}</td>
+                    <td>{{ white_numbers_6[28] }}</td>
+                    <td>{{ white_numbers_6[29] }}</td>
+                </tr>
+                <tr>
+                    <th>N+30</th>
+                    <td>{{ white_numbers_6[30] }}</td>
+                    <td>{{ white_numbers_6[31] }}</td>
+                    <td>{{ white_numbers_6[32] }}</td>
+                    <td>{{ white_numbers_6[33] }}</td>
+                    <td>{{ white_numbers_6[34] }}</td>
+                    <td>{{ white_numbers_6[35] }}</td>
+                    <td>{{ white_numbers_6[36] }}</td>
+                    <td>{{ white_numbers_6[37] }}</td>
+                    <td>{{ white_numbers_6[38] }}</td>
+                    <td>{{ white_numbers_6[39] }}</td>
+                </tr>
+                <tr>
+                    <th>N+40</th>
+                    <td>{{ white_numbers_6[40] }}</td>
+                    <td>{{ white_numbers_6[41] }}</td>
+                    <td>{{ white_numbers_6[42] }}</td>
+                    <td>{{ white_numbers_6[43] }}</td>
+                    <td>{{ white_numbers_6[44] }}</td>
+                    <td>{{ white_numbers_6[45] }}</td>
+                    <td>{{ white_numbers_6[46] }}</td>
+                    <td>{{ white_numbers_6[47] }}</td>
+                    <td>{{ white_numbers_6[48] }}</td>
+                    <td>{{ white_numbers_6[49] }}</td>
+                </tr>
+                <tr>
+                    <th>N+50</th>
+                    <td>{{ white_numbers_6[50] }}</td>
+                    <td>{{ white_numbers_6[51] }}</td>
+                    <td>{{ white_numbers_6[52] }}</td>
+                    <td>{{ white_numbers_6[53] }}</td>
+                    <td>{{ white_numbers_6[54] }}</td>
+                    <td>{{ white_numbers_6[55] }}</td>
+                    <td>{{ white_numbers_6[56] }}</td>
+                    <td>{{ white_numbers_6[57] }}</td>
+                    <td>{{ white_numbers_6[58] }}</td>
+                    <td>{{ white_numbers_6[59] }}</td>
+                </tr>
+                <tr>
+                    <th>N+60</th>
+                    <td>{{ white_numbers_6[60] }}</td>
+                    <td>{{ white_numbers_6[61] }}</td>
+                    <td>{{ white_numbers_6[62] }}</td>
+                    <td>{{ white_numbers_6[63] }}</td>
+                    <td>{{ white_numbers_6[64] }}</td>
+                    <td>{{ white_numbers_6[65] }}</td>
+                    <td>{{ white_numbers_6[66] }}</td>
+                    <td>{{ white_numbers_6[67] }}</td>
+                    <td>{{ white_numbers_6[68] }}</td>
+                    <td>*</td>
+                </tr>
+            </table>
+            <p>
+                To compare our data from the last 6 months, let's see the 
+                TRENDING tables for WHITE numbers in the RECENT (last 24 draw) times
+            </p>
+            <table class="probability-table-white">
+                <tr>
+                    <th>Numbers (N)</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th>N</th>
+                    <td>{{ white_numbers_trends[0] }}</td>
+                    <td>{{ white_numbers_trends[1] }}</td>
+                    <td>{{ white_numbers_trends[2] }}</td>
+                    <td>{{ white_numbers_trends[3] }}</td>
+                    <td>{{ white_numbers_trends[4] }}</td>
+                    <td>{{ white_numbers_trends[5] }}</td>
+                    <td>{{ white_numbers_trends[6] }}</td>
+                    <td>{{ white_numbers_trends[7] }}</td>
+                    <td>{{ white_numbers_trends[8] }}</td>
+                    <td>{{ white_numbers_trends[9] }}</td>
+                </tr>
+                <tr>
+                    <th>N+10</th>
+                    <td>{{ white_numbers_trends[10] }}</td>
+                    <td>{{ white_numbers_trends[11] }}</td>
+                    <td>{{ white_numbers_trends[12] }}</td>
+                    <td>{{ white_numbers_trends[13] }}</td>
+                    <td>{{ white_numbers_trends[14] }}</td>
+                    <td>{{ white_numbers_trends[15] }}</td>
+                    <td>{{ white_numbers_trends[16] }}</td>
+                    <td>{{ white_numbers_trends[17] }}</td>
+                    <td>{{ white_numbers_trends[18] }}</td>
+                    <td>{{ white_numbers_trends[19] }}</td>
+                </tr>
+                <tr>
+                    <th>N+20</th>
+                    <td>{{ white_numbers_trends[20] }}</td>
+                    <td>{{ white_numbers_trends[21] }}</td>
+                    <td>{{ white_numbers_trends[22] }}</td>
+                    <td>{{ white_numbers_trends[23] }}</td>
+                    <td>{{ white_numbers_trends[24] }}</td>
+                    <td>{{ white_numbers_trends[25] }}</td>
+                    <td>{{ white_numbers_trends[26] }}</td>
+                    <td>{{ white_numbers_trends[27] }}</td>
+                    <td>{{ white_numbers_trends[28] }}</td>
+                    <td>{{ white_numbers_trends[29] }}</td>
+                </tr>
+                <tr>
+                    <th>N+30</th>
+                    <td>{{ white_numbers_trends[30] }}</td>
+                    <td>{{ white_numbers_trends[31] }}</td>
+                    <td>{{ white_numbers_trends[32] }}</td>
+                    <td>{{ white_numbers_trends[33] }}</td>
+                    <td>{{ white_numbers_trends[34] }}</td>
+                    <td>{{ white_numbers_trends[35] }}</td>
+                    <td>{{ white_numbers_trends[36] }}</td>
+                    <td>{{ white_numbers_trends[37] }}</td>
+                    <td>{{ white_numbers_trends[38] }}</td>
+                    <td>{{ white_numbers_trends[39] }}</td>
+                </tr>
+                <tr>
+                    <th>N+40</th>
+                    <td>{{ white_numbers_trends[40] }}</td>
+                    <td>{{ white_numbers_trends[41] }}</td>
+                    <td>{{ white_numbers_trends[42] }}</td>
+                    <td>{{ white_numbers_trends[43] }}</td>
+                    <td>{{ white_numbers_trends[44] }}</td>
+                    <td>{{ white_numbers_trends[45] }}</td>
+                    <td>{{ white_numbers_trends[46] }}</td>
+                    <td>{{ white_numbers_trends[47] }}</td>
+                    <td>{{ white_numbers_trends[48] }}</td>
+                    <td>{{ white_numbers_trends[49] }}</td>
+                </tr>
+                <tr>
+                    <th>N+50</th>
+                    <td>{{ white_numbers_trends[50] }}</td>
+                    <td>{{ white_numbers_trends[51] }}</td>
+                    <td>{{ white_numbers_trends[52] }}</td>
+                    <td>{{ white_numbers_trends[53] }}</td>
+                    <td>{{ white_numbers_trends[54] }}</td>
+                    <td>{{ white_numbers_trends[55] }}</td>
+                    <td>{{ white_numbers_trends[56] }}</td>
+                    <td>{{ white_numbers_trends[57] }}</td>
+                    <td>{{ white_numbers_trends[58] }}</td>
+                    <td>{{ white_numbers_trends[59] }}</td>
+                </tr>
+                <tr>
+                    <th>N+60</th>
+                    <td>{{ white_numbers_trends[60] }}</td>
+                    <td>{{ white_numbers_trends[61] }}</td>
+                    <td>{{ white_numbers_trends[62] }}</td>
+                    <td>{{ white_numbers_trends[63] }}</td>
+                    <td>{{ white_numbers_trends[64] }}</td>
+                    <td>{{ white_numbers_trends[65] }}</td>
+                    <td>{{ white_numbers_trends[66] }}</td>
+                    <td>{{ white_numbers_trends[67] }}</td>
+                    <td>{{ white_numbers_trends[68] }}</td>
+                    <td>*</td>
+                </tr>
+            </table>
+            <p>
+                <span class="trends-table-title">
+                    POWERBALL (RED NUMBERS)
+                </span>
+            </p>
+            <p>
+                In addition to five white numbers, we have one RED (Powerball) number
+                drawn as a winner each draw. So let's check how did our RED numbers fare
+                in the last 6 months
+            </p>
+            <table class="probability-table-red">
+                <tr>
+                    <th>Numbers (N)</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th>N</th>
+                    <td>{{ red_numbers_6[0] }}</td>
+                    <td>{{ red_numbers_6[1] }}</td>
+                    <td>{{ red_numbers_6[2] }}</td>
+                    <td>{{ red_numbers_6[3] }}</td>
+                    <td>{{ red_numbers_6[4] }}</td>
+                    <td>{{ red_numbers_6[5] }}</td>
+                    <td>{{ red_numbers_6[6] }}</td>
+                    <td>{{ red_numbers_6[7] }}</td>
+                    <td>{{ red_numbers_6[8] }}</td>
+                    <td>{{ red_numbers_6[9] }}</td>
+                </tr>
+                <tr>
+                    <th>N+10</th>
+                    <td>{{ red_numbers_6[10] }}</td>
+                    <td>{{ red_numbers_6[11] }}</td>
+                    <td>{{ red_numbers_6[12] }}</td>
+                    <td>{{ red_numbers_6[13] }}</td>
+                    <td>{{ red_numbers_6[14] }}</td>
+                    <td>{{ red_numbers_6[15] }}</td>
+                    <td>{{ red_numbers_6[16] }}</td>
+                    <td>{{ red_numbers_6[17] }}</td>
+                    <td>{{ red_numbers_6[18] }}</td>
+                    <td>{{ red_numbers_6[19] }}</td>
+                </tr>
+                <tr>
+                    <th>N+20</th>
+                    <td>{{ red_numbers_6[20] }}</td>
+                    <td>{{ red_numbers_6[21] }}</td>
+                    <td>{{ red_numbers_6[22] }}</td>
+                    <td>{{ red_numbers_6[23] }}</td>
+                    <td>{{ red_numbers_6[24] }}</td>
+                    <td>{{ red_numbers_6[25] }}</td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                </tr>
+            </table>
+            <p>
+                Finally, let's see trending table for RED numbers in the last 24 draws and 
+                how did they influence our recent trends
+            </p>
+            <table class="probability-table-red">
+                <tr>
+                    <th>Numbers (N)</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th>N</th>
+                    <td>{{ red_numbers_trends[0] }}</td>
+                    <td>{{ red_numbers_trends[1] }}</td>
+                    <td>{{ red_numbers_trends[2] }}</td>
+                    <td>{{ red_numbers_trends[3] }}</td>
+                    <td>{{ red_numbers_trends[4] }}</td>
+                    <td>{{ red_numbers_trends[5] }}</td>
+                    <td>{{ red_numbers_trends[6] }}</td>
+                    <td>{{ red_numbers_trends[7] }}</td>
+                    <td>{{ red_numbers_trends[8] }}</td>
+                    <td>{{ red_numbers_trends[9] }}</td>
+                </tr>
+                <tr>
+                    <th>N+10</th>
+                    <td>{{ red_numbers_trends[10] }}</td>
+                    <td>{{ red_numbers_trends[11] }}</td>
+                    <td>{{ red_numbers_trends[12] }}</td>
+                    <td>{{ red_numbers_trends[13] }}</td>
+                    <td>{{ red_numbers_trends[14] }}</td>
+                    <td>{{ red_numbers_trends[15] }}</td>
+                    <td>{{ red_numbers_trends[16] }}</td>
+                    <td>{{ red_numbers_trends[17] }}</td>
+                    <td>{{ red_numbers_trends[18] }}</td>
+                    <td>{{ red_numbers_trends[19] }}</td>
+                </tr>
+                <tr>
+                    <th>N+20</th>
+                    <td>{{ red_numbers_trends[20] }}</td>
+                    <td>{{ red_numbers_trends[21] }}</td>
+                    <td>{{ red_numbers_trends[22] }}</td>
+                    <td>{{ red_numbers_trends[23] }}</td>
+                    <td>{{ red_numbers_trends[24] }}</td>
+                    <td>{{ red_numbers_trends[25] }}</td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                </tr>
+            </table>
+        </div>
+        
+    {% endblock %}
+</body>
