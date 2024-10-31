@@ -20,10 +20,10 @@ last_draw = powerball['Draw Date'].max()
 first_draw = powerball['Draw Date'].min()
 
 # get date only from pandas date object to export to html
-latest = last_draw.date()
+latest = last_draw.date().strftime('%m-%d-%Y')
 
 # Get date only from pandas date object to export to html
-earliest = first_draw.date()
+earliest = first_draw.date().strftime('%m-%d-%Y')
 
 # Subtract 6 months from the maximum date
 six_months_ago = last_draw - pd.DateOffset(months=6)

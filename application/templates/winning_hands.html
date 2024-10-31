@@ -24,7 +24,7 @@
             <p>
                 White Powerball numbers range from 1 to 69. In our set of 1-69, median is 35. Thirty Five sits straight in the middle, and I will 
                 for this purpose divide our white numbers into two sets of {1, 2, 3,...34} 
-                and {36, 37, 38,...69}. I'll omit 35 on purpose from both sets for this 
+                and {36, 37, 38,...69}. I'll OMIT 35 on purpose from both sets for this 
                 case. If you want to see more detailed stats for any powerball number, 
                 including 35 check this page -> <a href="{{ url_for('powerball.search') }}">STATS PER NUMBER</a><br>
                 <table class="probability-table-white">
@@ -35,13 +35,13 @@
                     </tr>
                     <tr>
                         <td>Lower{1-34}</td>
-                        <td>2703</td>
-                        <td>48.79 %</td>
+                        <td>2706</td>
+                        <td>48.80 %</td>
                     </tr>
                     <tr>
                         <td>Higher{36-69}</td>
-                        <td>2768</td>
-                        <td>49.96 %</td>
+                        <td>2770</td>
+                        <td>49.95 %</td>
                     </tr>
                 </table>
                 <p class="probaility-p-insert">
@@ -63,13 +63,13 @@
                     </tr>
                     <tr>
                         <td>Lower{1-34}</td>
-                        <td>68</td>
-                        <td>56.67 %</td>
+                        <td>67</td>
+                        <td>55.83 %</td>
                     </tr>
                     <tr>
                         <td>Higher{36-69}</td>
-                        <td>52</td>
-                        <td>43.33 %</td>
+                        <td>53</td>
+                        <td>44.17 %</td>
                     </tr>
                 </table>
        
@@ -77,7 +77,7 @@
             <h4>Sets</h4>
             <p>
                 After splitting numbers in half, I'd like to go a bit further. Looking at 
-                our 69 numbers we can divide them into 7 almost equal sets. 6 of the 
+                our 69 numbers we can divide them into 7 ALMOST equal sets. 6 of the 
                 7 sets will have 10 numbers while the set with single digit numbers 
                 will contain 9 numbers. For the sake of simplicity, I will name these 
                 sets as follows:<br>
@@ -101,37 +101,37 @@
                     <tr>
                         <td>ONES</td>
                         <td>698</td>
-                        <td>12.60 %</td>
+                        <td>12.59 %</td>
                     </tr>
                     <tr>
                         <td>TENS</td>
-                        <td>770</td>
+                        <td>771</td>
                         <td>13.90 %</td>
                     </tr>
                     <tr>
                         <td>TWENTIES</td>
-                        <td>821</td>
-                        <td>14.82 %</td>
+                        <td>823</td>
+                        <td>14.84 %</td>
                     </tr>
                     <tr>
                         <td>THIRTIES</td>
                         <td>840</td>
-                        <td>15.16 %</td>
+                        <td>15.15 %</td>
                     </tr>
                     <tr>
                         <td>FORTIES</td>
-                        <td>7609</td>
+                        <td>761</td>
                         <td>13.72 %</td>
                     </tr>
                     <tr>
                         <td>FIFTIES</td>
-                        <td>783</td>
-                        <td>14.13 %</td>
+                        <td>784</td>
+                        <td>14.14 %</td>
                     </tr>
                     <tr>
                         <td>SIXTIES</td>
                         <td>868</td>
-                        <td>15.67 %</td>
+                        <td>15.65 %</td>
                     </tr>
                 </table>
         
@@ -161,6 +161,7 @@
                 PAIR = (example: <span class="text">2, 5,</span> 21, 45, 57)<br>
                 TWO PAIRS = (example: <span class="text">10, 13,</span> 34, <span class="text">45, 48</span>)<br>
                 THREE OF SET = (example: 12, <span class="text"> 34, 35, 38,</span> 67)<br>
+                FULL HOUSE = (example: 6, 9, <span class="text">20, 23, 27</span>)<br>
                 POKER = (example: 9, <span class="text">23, 25, 26, 29</span>)<br>
                 FLUSH = (example: <span class="text">31, 33, 35, 37, 39</span>)<br>
                 <br>
@@ -171,36 +172,117 @@
                         <th>Hands</th>
                         <th>Times Drawn</th>
                         <th>Percentage</th>
+                        <th>Last Time Drawn</th>
+                        <th>Most Common Winning Set</th>
                     </tr>
                     <tr>
                         <td>SINGLES</td>
-                        <td>182</td>
-                        <td>16.43 %</td>
+                        <td>{{ winning_hands['singles'] }}</td>
+                        <td>{{ (winning_hands['singles']/total_winning_hands * 100)|round(2) }} %</td>
+                        <td>10-12-2024</td>
+                        <td>N/A</td>
                     </tr>
                     <tr>
                         <td>PAIR</td>
-                        <td>570</td>
-                        <td>51.44 %</td>
+                        <td>{{ winning_hands['pairs'] }}</td>
+                        <td>{{ (winning_hands['pairs']/total_winning_hands * 100)|round(2) }} %</td>
+                        <td>10-30-2024</td>
+                        <td>TWENTIES</td>
                     </tr>
                     <tr>
                         <td>TWO PAIRS</td>
-                        <td>212</td>
-                        <td>19.13 %</td>
+                        <td>{{ winning_hands['two_pairs'] }}</td>
+                        <td>{{ (winning_hands['two_pairs']/total_winning_hands * 100)|round(2) }} %</td>
+                        <td>10-14-2024</td>
+                        <td>FIFTIES / SIXTIES</td>
                     </tr>
                     <tr>
                         <td>THREE OF SET</td>
-                        <td>134</td>
-                        <td>12.09 %</td>
+                        <td>{{ winning_hands['three_of_set'] }}</td>
+                        <td>{{ (winning_hands['three_of_set']/total_winning_hands * 100)|round(2) }} %</td>
+                        <td>09-02-2024</td>
+                        <td>THIRTIES & SIXTIES</td>
+                    </tr>
+                    <tr>
+                        <td>FULL HOUSE</td>
+                        <td>{{ winning_hands['full_house'] }}</td>
+                        <td>{{ (winning_hands['full_house']/total_winning_hands * 100)|round(2) }} %</td>
+                        <td>01-31-2024</td>
+                        <td>FIFTIES / SIXTIES</td>
                     </tr>
                     <tr>
                         <td>POKER</td>
-                        <td>10</td>
-                        <td>0.90 %</td>
+                        <td>{{ winning_hands['poker'] }}</td>
+                        <td>{{ (winning_hands['poker']/total_winning_hands * 100)|round(2) }} %</td>
+                        <td>08-26-2023</td>
+                        <td>THIRTIES</td>
                     </tr>
                     <tr>
                         <td>FLUSH</td>
-                        <td>0</td>
-                        <td>0 %</td>
+                        <td>{{ winning_hands['flush'] }}</td>
+                        <td>{{ (winning_hands['flush']/total_winning_hands * 100)|round(2) }} %</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    </tr>
+                </table>
+                <span class="probability-minor">
+                    *REMEMBER that TWO PAIRS and FULL HOUSE will have two sets appearing together
+                    as winners in a single draw
+                </span>
+            </p>
+            <h4>Pairs</h4>
+            <p>
+                We see that PAIRS are a dominating winning hand in Powerball, coming in as winners
+                in over 50% of draws. Naturally you'd like to have more information about
+                how often each set comes as the winning pair in Powerball. <br>
+                <table class="probability-table-white">
+                    <tr>
+                        <th>Sets</th>
+                        <th>Times Drawn</th>
+                        <th>Percentage of all pairs</th>
+                        <th>Last Time Drawn</th>
+                    </tr>
+                    <tr>
+                        <td>ONES</td>
+                        <td>{{ pair_count[1] }}</td>
+                        <td>{{ (pair_count[1]/total_pairs * 100)|round(2) }} %</td>
+                        <td>10-02-2024</td>
+                    </tr>
+                    <tr>
+                        <td>TENS</td>
+                        <td>{{ pair_count[10] }}</td>
+                        <td>{{ (pair_count[10]/total_pairs * 100)|round(2) }} %</td>
+                        <td>10-19-2024</td>
+                    </tr>
+                    <tr>
+                        <td>TWENTIES</td>
+                        <td>{{ pair_count[20] }}</td>
+                        <td>{{ (pair_count[20]/total_pairs * 100)|round(2) }} %</td>
+                        <td>10-30-2024</td>
+                    </tr>
+                    <tr>
+                        <td>THIRTIES</td>
+                        <td>{{ pair_count[30] }}</td>
+                        <td>{{ (pair_count[30]/total_pairs * 100)|round(2) }} %</td>
+                        <td>10-16-2024</td>
+                    </tr>
+                    <tr>
+                        <td>FORTIES</td>
+                        <td>{{ pair_count[40] }}</td>
+                        <td>{{ (pair_count[40]/total_pairs * 100)|round(2) }} %</td>
+                        <td>10-26-2024</td>
+                    </tr>
+                    <tr>
+                        <td>FIFTIES</td>
+                        <td>{{ pair_count[50] }}</td>
+                        <td>{{ (pair_count[50]/total_pairs * 100)|round(2) }} %</td>
+                        <td>07-03-2024</td>
+                    </tr>
+                    <tr>
+                        <td>SIXTIES</td>
+                        <td>{{ pair_count[60] }}</td>
+                        <td>{{ (pair_count[60]/total_pairs * 100)|round(2) }} %</td>
+                        <td>10-21-2024</td>
                     </tr>
                 </table>
             </p>
