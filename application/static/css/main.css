@@ -16,6 +16,10 @@
     --beige: #FFC470;
     --brown: #DD5746;
     --white: white;
+    --alltime: #FBD288;
+    --6months: #ffac89;
+    --recent: #fc7d7d;
+    --extrainfo: #FFB0B0;
 }
 
 .header {
@@ -81,7 +85,7 @@
 }
 
 .index-title {
-    margin-top: 150px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -239,7 +243,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: 250%;
+    top: 265%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 900px;
@@ -268,13 +272,34 @@ form {
         font-size: 1rem;
     }
 
+    .comparison-tables {
+        font-size: 1.25rem;
+        text-transform: uppercase;
+    }
+
+        .all-time {
+            background-color: var(--alltime);
+        }
+
+        .six-months {
+            background-color: var(--6months);
+        }
+
+        .recent-trends {
+            background-color: var(--recent);
+        }
+
+        .extra-info {
+            background-color: var(--extrainfo);
+        }
+
 .hands-content-red {
         position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        top: 110%;
+        top: 125%;
         left: 50%;
         transform: translate(-50%, -50%);
         max-width: 900px;
@@ -340,7 +365,7 @@ img {
     font-size: 1rem;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .nc-main-container {

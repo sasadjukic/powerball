@@ -13,7 +13,7 @@ def get_recent() -> tuple[list, list, list]:
     powerballs = []
 
     for i in range(len(reverse_r)):
-        date = reverse_r.iloc[i, 0].strftime("%Y-%m-%d")
+        date = reverse_r.iloc[i, 0].strftime("%m-%d-%Y")
         white_numbers = reverse_r.iloc[i, 1]
         powerball = reverse_r.iloc[i, 2]
 
