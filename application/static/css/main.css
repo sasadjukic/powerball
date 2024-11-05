@@ -329,7 +329,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: 140%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 900px;
