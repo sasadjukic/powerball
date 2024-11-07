@@ -31,11 +31,13 @@
                 <a href="{{ url_for('powerball.winning_hands_white') }}">Winning Hands White</a>
                 <a href="{{ url_for('powerball.winning_hands_red') }}">Winning Hands Red</a>
                 <a href="{{ url_for('powerball.trends') }}">Trending Numbers</a>
+                <a href="{{ url_for('powerball.powerball_matrix') }}">Powerball Matrix</a>
             </div>
         </div>
         <div class="dropdown">
-            <button>Simulation</button>
+            <button>Extra</button>
             <div class="dropdown-content">
+                <a href="{{ url_for('powerball.fun_facts') }}">Fun Facts</a>
                 <a href="{{ url_for('powerball.probabilities') }}">Probabilities</a>
                 <a href="{{ url_for('powerball.predictions') }}">Predictions</a>
             </div>

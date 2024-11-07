@@ -136,7 +136,7 @@ def search():
 @powerball.route('/winning_hands_white', methods=['POST', 'GET'])
 def winning_hands_white():
     winning_hands = {
-                     'singles': [183, 13, 6], 'pairs': [572, 45, 16], 
+                     'singles': [183, 13, 7], 'pairs': [573, 45, 17], 
                      'two_pairs': [212, 15, 2], 'three_of_set': [119, 7, 0], 
                      'full_house': [15, 0, 0], 'poker': [10, 0, 0], 'flush': [0, 0, 0]
                      }
@@ -144,8 +144,8 @@ def winning_hands_white():
     total_winning_hands_6 = sum(values[1] for values in winning_hands.values())
     total_winning_hands_recent = sum(values[2] for values in winning_hands.values())
 
-    pair_count = {1: [72, 6, 0], 10: [68, 5, 1], 20: [99, 8, 3], 30: [95, 9, 2], 
-                  40: [64, 5, 2], 50: [81, 6, 0], 60: [93, 6, 1]}
+    pair_count = {1: [72, 6, 2], 10: [69, 6, 4], 20: [99, 7, 4], 30: [95, 9, 3], 
+                  40: [64, 5, 3], 50: [81, 6, 0], 60: [93, 6, 1]}
     total_pairs = sum(values[0] for values in pair_count.values())
     total_pairs_6 = sum(values[1] for values in pair_count.values())
     total_pairs_recent = sum(values[2] for values in pair_count.values())
@@ -168,27 +168,27 @@ def winning_hands_red():
 @powerball.route('/trends', methods=['POST', 'GET'])
 def trends():
     white_numbers_6 = [6, 7, 4, 7, 9, 5, 6, 6, 10, 4, 
-                       6, 5, 3, 5, 5, 4, 2, 5, 7, 3, 
-                       7, 4, 6, 5, 4, 4, 8, 2, 7, 7, 
-                       10, 6, 12, 5, 5, 7, 7, 6, 8, 5, 
+                       6, 6, 3, 4, 5, 4, 3, 5, 7, 2, 
+                       7, 4, 5, 5, 4, 4, 8, 2, 7, 7, 
+                       10, 6, 12, 5, 5, 7, 8, 6, 8, 5, 
                        2, 5, 7, 6, 12, 5, 5, 8, 3, 3, 
-                       5, 5, 6, 5, 6, 6, 7, 6, 6, 5, 
-                       5, 4, 3, 10, 2, 5, 7, 6, 11
+                       5, 5, 5, 5, 6, 6, 7, 7, 6, 5, 
+                       5, 5, 3, 10, 2, 5, 7, 6, 10
                     ]
-    white_numbers_trends = [3, 4, 1, 1, 1, 1, 1, 2, 2, 2, 
-                            4, 3, 2, 2, 2, 1, 1, 3, 2, 1, 
-                            4, 2, 0, 1, 3, 1, 3, 0, 3, 3, 
-                            2, 2, 2, 1, 0, 0, 3, 1, 3, 1, 
+    white_numbers_trends = [4, 4, 1, 1, 1, 1, 1, 2, 2, 2, 
+                            4, 4, 2, 2, 2, 2, 2, 3, 2, 1, 
+                            5, 2, 0, 1, 3, 1, 3, 0, 3, 3, 
+                            2, 2, 2, 1, 0, 0, 4, 1, 3, 1, 
                             1, 0, 4, 1, 6, 2, 1, 4, 0, 0, 
-                            1, 3, 2, 0, 1, 1, 2, 2, 0, 1, 
-                            1, 1, 1, 3, 2, 1, 3, 1, 1
+                            1, 3, 2, 0, 1, 1, 3, 3, 0, 2, 
+                            1, 2, 1, 3, 2, 1, 3, 1, 1
                     ]
     red_numbers_6 = [2, 2, 3, 3, 3, 2, 4, 2, 6, 2, 
                      1, 2, 2, 3, 4, 3, 4, 0, 3, 7, 
                      9, 6, 1, 1, 3, 2
                     ]
 
-    red_numbers_trends = [0, 1, 2, 0, 0, 1, 1, 0, 0, 1, 
+    red_numbers_trends = [0, 1, 2, 1, 1, 1, 1, 0, 0, 1, 
                           1, 0, 0, 2, 2, 1, 2, 0, 1, 2, 
                           3, 3, 0, 0, 1, 0
                          ]
@@ -199,22 +199,30 @@ def trends():
                             red_numbers_trends = red_numbers_trends
                           )
 
+@powerball.route('/powerball_matrix', methods=['POST', 'GET'])
+def powerball_matrix():
+    return render_template('powerball_matrix.html')
+
+@powerball.route('/fun_facts', methods=['POST', 'GET'])
+def fun_facts():
+    return render_template('fun_facts.html')
+
 @powerball.route('/probabilities', methods=['POST', 'GET'])
 def probabilities():
     draw = next_draw().strftime('%m-%d-%Y')
     white_numbers = [
-                     6.99, 7.53, 7.64, 6.55, 6.62, 6.98, 6.66, 6.25, 7.07, 7.25, 
-                     7.43, 7.53, 5.23, 6.57, 6.81, 7.52, 7.17, 7.14, 7.58, 6.92, 
-                     8.95, 6.90, 8.15, 7.35, 6.59, 6.28, 8.43, 7.64, 6.26, 7.18, 
-                     7.14, 8.42, 8.82, 6.03, 6.26, 8.83, 8.22, 7.21, 8.72, 6.68, 
-                     6.57, 6.61, 6.57, 7.98, 7.50, 6.60, 8.41, 6.22, 5.78, 7.21, 
-                     6.17, 6.61, 8.16, 7.25, 6.68, 6.99, 6.83, 6.15, 8.20, 6.12, 
-                     9.51, 7.73, 8.09, 8.41, 6.43, 7.34, 7.79, 7.81, 8.78
+                     7.12, 7.87, 7.78, 6.66, 6.40, 7.39, 6.88, 6.56, 7.27, 6.87, 
+                     6.99, 7.58, 5.46, 7.11, 6.95, 7.29, 7.30, 7.24, 7.43, 7.69, 
+                     8.89, 6.44, 8.68, 7.41, 5.78, 6.34, 8.27, 7.72, 5.82, 7.50, 
+                     7.09, 8.31, 8.09, 6.22, 6.37, 8.41, 8.02, 7.12, 8.67, 6.89, 
+                     6.86, 7.29, 6.88, 7.74, 7.61, 6.33, 7.97, 6.58, 5.37, 7.11, 
+                     6.43, 7.09, 7.88, 7.21, 6.43, 6.84, 6.62, 6.63, 7.79, 6.56, 
+                     8.95, 7.92, 8.29, 8.31, 6.49, 6.82, 7.32, 7.71, 9.09
                      ]
     red_numbers = [
-                   3.64, 3.54, 4.02, 4.72, 4.03, 3.27, 3.51, 3.29, 4.42, 4.01, 
-                   3.79, 2.85, 4.05, 4.72, 3.26, 3.19, 3.44, 4.99, 3.63, 3.79, 
-                   4.80, 3.34, 3.35, 4.16, 4.06, 4.13
+                   3.27, 3.41, 3.78, 5.69, 3.84, 3.51, 3.65, 3.39, 4.11, 4.03, 
+                   3.67, 3.15, 3.46, 4.72, 3.22, 3.31, 3.26, 4.52, 3.66, 3.67, 
+                   4.84, 3.35, 3.28, 4.53, 4.21, 4.47
                    ]
     return render_template('probabilities.html', 
                             draw=draw,
@@ -226,13 +234,13 @@ def probabilities():
 def predictions():
     draw = next_draw().strftime('%m-%d-%Y')
     white_numbers = [
-                     [26, 33, 36, 53, 69], 
-                     [7, 21, 28, 51, 57], 
-                     [14, 37, 48, 50, 61], 
-                     [6, 8, 17, 32, 63], 
-                     [1, 26, 49, 66, 67]
+                     [24, 32, 49, 58, 69], 
+                     [2, 6, 37, 50, 51], 
+                     [11, 21, 26, 48, 61], 
+                     [1, 18, 33, 36, 45], 
+                     [7, 14, 53, 63, 65]
                      ]
-    red_numbers = [2, 14, 4, 18, 9]
+    red_numbers = [4, 15, 7, 17, 24]
     return render_template('predictions.html',
                             draw=draw, 
                             white_numbers=white_numbers, 
