@@ -107,6 +107,12 @@
         {% endif %}
         {% if white_percentage %}
             <h4 class="stats-title" id="ys-st">Yearly stats</h4>
+            <p>
+                <span class="search-minor">
+                    *REMEMBER starting on August 23, 2021, draws would occur on Monday, 
+                    in addition to Wednesday and Saturday
+                </span>
+            </p>
             <img src="data:image/png;base64,{{ chart_white_yearly }}" alt="Yearly Chart">
             {% if red_percentage %}
                 <img src="data:image/png;base64,{{ chart_red_yearly }}" alt="Yearly Chart">

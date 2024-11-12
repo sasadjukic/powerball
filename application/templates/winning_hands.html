@@ -56,21 +56,21 @@
                     </tr>
                     <tr>
                         <th scope="row">Lower{1-34}</th>
-                        <td class="all-time">2712</td>
-                        <td class="all-time">48.78 %</td>
-                        <td class="six-months">195</td>
-                        <td class="six-months">48.75 %</td>
-                        <td class="recent-trends">71</td>
-                        <td class="recent-trends">54.62 %</td>
+                        <td class="all-time">{{ splits['all-time'][0] }}</td>
+                        <td class="all-time">{{ (splits['all-time'][0] / splits['all-time'][2] * 100)|round(2) }} %</td>
+                        <td class="six-months">{{ splits['six-months'][0] }}</td>
+                        <td class="six-months">{{ (splits['six-months'][0] / splits['six-months'][2] * 100)|round(2) }} %</td>
+                        <td class="recent-trends">{{ splits['recent-trends'][0] }}</td>
+                        <td class="recent-trends">{{ (splits['recent-trends'][0] / splits['recent-trends'][2] * 100)|round(2) }} %</td>
                     </tr>
                     <tr>
                         <th scope="row">Higher{36-69}</th>
-                        <td class="all-time">2779</td>
-                        <td class="all-time">49.98 %</td>
-                        <td class="six-months">200</td>
-                        <td class="six-months">50.00 %</td>
-                        <td class="recent-trends">59</td>
-                        <td class="recent-trends">45.38 %</td>
+                        <td class="all-time">{{ splits['all-time'][1] }}</td>
+                        <td class="all-time">{{ (splits['all-time'][1] / splits['all-time'][2] * 100)|round(2) }} %</td>
+                        <td class="six-months">{{ splits['six-months'][1] }}</td>
+                        <td class="six-months">{{ (splits['six-months'][1] / splits['six-months'][2] * 100)|round(2) }} %</td>
+                        <td class="recent-trends">{{ splits['recent-trends'][1] }}</td>
+                        <td class="recent-trends">{{ (splits['recent-trends'][1] / splits['recent-trends'][2] * 100)|round(2) }} %</td>
                     </tr>
                 </table>
                 <span class="probability-minor">
@@ -122,66 +122,66 @@
                     </tr>
                     <tr>
                         <th scope="row">Ones</th>
-                        <td class="all-time">699</td>
-                        <td class="all-time">12.57 %</td>
-                        <td class="six-months">60</td>
-                        <td class="six-months">15.00 %</td>
-                        <td class="recent-trends">17</td>
-                        <td class="recent-trends">13.08 %</td>
+                        <td class="all-time">{{ sets['all-time'][0] }}</td>
+                        <td class="all-time">{{ (sets['all-time'][0] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                        <td class="six-months">{{ sets['six-months'][0] }}</td>
+                        <td class="six-months">{{ (sets['six-months'][0] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                        <td class="recent-trends">{{ sets['recent-trends'][0] }}</td>
+                        <td class="recent-trends">{{ (sets['recent-trends'][0] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
                     </tr>
                     <tr>
                         <th scope="row">Tens</th>
-                        <td class="all-time">775</td>
-                        <td class="all-time">13.94 %</td>
-                        <td class="six-months">47</td>
-                        <td class="six-months">11.75 %</td>
-                        <td class="recent-trends">25</td>
-                        <td class="recent-trends">19.23 %</td>
+                        <td class="all-time">{{ sets['all-time'][1] }}</td>
+                        <td class="all-time">{{ (sets['all-time'][1] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                        <td class="six-months">{{ sets['six-months'][1] }}</td>
+                        <td class="six-months">{{ (sets['six-months'][1] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                        <td class="recent-trends">{{ sets['recent-trends'][1] }}</td>
+                        <td class="recent-trends">{{ (sets['recent-trends'][1] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
                     </tr>
                     <tr>
                         <th scope="row">Twenties</th>
-                        <td class="all-time">823</td>
-                        <td class="all-time">14.80 %</td>
-                        <td class="six-months">48</td>
-                        <td class="six-months">12.00 %</td>
-                        <td class="recent-trends">19</td>
-                        <td class="recent-trends">14.62 %</td>
+                        <td class="all-time">{{ sets['all-time'][2] }}</td>
+                        <td class="all-time">{{ (sets['all-time'][2] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                        <td class="six-months">{{ sets['six-months'][2] }}</td>
+                        <td class="six-months">{{ (sets['six-months'][2] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                        <td class="recent-trends">{{ sets['recent-trends'][2] }}</td>
+                        <td class="recent-trends">{{ (sets['recent-trends'][2] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
                     </tr>
                     <tr>
                         <th scope="row">Thirties</th>
-                        <td class="all-time">842</td>
-                        <td class="all-time">15.14 %</td>
-                        <td class="six-months">74</td>
-                        <td class="six-months">18.50 %</td>
-                        <td class="recent-trends">18</td>
-                        <td class="recent-trends">13.85 %</td>
+                        <td class="all-time">{{ sets['all-time'][3] }}</td>
+                        <td class="all-time">{{ (sets['all-time'][3] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                        <td class="six-months">{{ sets['six-months'][3] }}</td>
+                        <td class="six-months">{{ (sets['six-months'][3] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                        <td class="recent-trends">{{ sets['recent-trends'][3] }}</td>
+                        <td class="recent-trends">{{ (sets['recent-trends'][3] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
                     </tr>
                     <tr>
                         <th scope="row">Forties</th>
-                        <td class="all-time">764</td>
-                        <td class="all-time">13.74 %</td>
-                        <td class="six-months">58</td>
-                        <td class="six-months">14.50 %</td>
-                        <td class="recent-trends">20</td>
-                        <td class="recent-trends">15.38 %</td>
+                        <td class="all-time">{{ sets['all-time'][4] }}</td>
+                        <td class="all-time">{{ (sets['all-time'][4] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                        <td class="six-months">{{ sets['six-months'][4] }}</td>
+                        <td class="six-months">{{ (sets['six-months'][4] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                        <td class="recent-trends">{{ sets['recent-trends'][4] }}</td>
+                        <td class="recent-trends">{{ (sets['recent-trends'][4] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
                     </tr>
                     <tr>
                         <th scope="row">Fifties</th>
-                        <td class="all-time">787</td>
-                        <td class="all-time">14.15 %</td>
-                        <td class="six-months">55</td>
-                        <td class="six-months">13.75 %</td>
-                        <td class="recent-trends">14</td>
-                        <td class="recent-trends">10.77 %</td>
+                        <td class="all-time">{{ sets['all-time'][5] }}</td>
+                        <td class="all-time">{{ (sets['all-time'][5] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                        <td class="six-months">{{ sets['six-months'][5] }}</td>
+                        <td class="six-months">{{ (sets['six-months'][5] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                        <td class="recent-trends">{{ sets['recent-trends'][5] }}</td>
+                        <td class="recent-trends">{{ (sets['recent-trends'][5] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
                     </tr>
                     <tr>
                         <th scope="row">Sixties</th>
-                        <td class="all-time">870</td>
-                        <td class="all-time">15.65 %</td>
-                        <td class="six-months">58</td>
-                        <td class="six-months">14.50 %</td>
-                        <td class="recent-trends">17</td>
-                        <td class="recent-trends">13.08 %</td>
+                        <td class="all-time">{{ sets['all-time'][6] }}</td>
+                        <td class="all-time">{{ (sets['all-time'][6] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                        <td class="six-months">{{ sets['six-months'][6] }}</td>
+                        <td class="six-months">{{ (sets['six-months'][6] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                        <td class="recent-trends">{{ sets['recent-trends'][6] }}</td>
+                        <td class="recent-trends">{{ (sets['recent-trends'][6] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
                     </tr>
                 </table>    
             </p>
@@ -255,7 +255,7 @@
                         <td class="six-months">{{ (winning_hands['pairs'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
                         <td class="recent-trends">{{ winning_hands['pairs'][2] }}</td>
                         <td class="recent-trends">{{ (winning_hands['pairs'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">11-06-2024</td>
+                        <td class="extra-info">11-11-2024</td>
                         <td class="extra-info">Twenties</td>
                     </tr>
                     <tr>
@@ -372,7 +372,7 @@
                         <td class="six-months">{{ (pair_count[20][1]/total_pairs_6 * 100)|round(2) }} %</td>
                         <td class="recent-trends">{{ pair_count[20][2] }}</td>
                         <td class="recent-trends">{{ (pair_count[20][2]/total_pairs_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">10-30-2024</td>
+                        <td class="extra-info">11-11-2024</td>
                     </tr>
                     <tr>
                         <th scope="row">Thirties</th>
@@ -402,7 +402,7 @@
                         <td class="six-months">{{ (pair_count[50][1]/total_pairs_6 * 100)|round(2) }} %</td>
                         <td class="recent-trends">{{ pair_count[50][2] }}</td>
                         <td class="recent-trends">{{ (pair_count[50][2]/total_pairs_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">07-03-2024</td>
+                        <td class="extra-info">11-09-2024</td>
                     </tr>
                     <tr>
                         <th scope="row">Sixties</th>
