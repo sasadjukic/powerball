@@ -12,13 +12,13 @@
                 There are superstitious people who choose their lottery numbers
                 based on their own birthdays, as well as birthdays of their family and friends.
                 There are people who want to avoid superstitious people and choose only
-                numbers higher than 31.<br>
-                <br>                
+                numbers higher than 31.
+            </p>
+            <p>
                 Is it possible to check, which one of the two groups of people have a higher chance
                 to win Powerball? Not sure if I can answer that question, but let's 
                 use our superstitions to start simple and split our white powerball 
-                numbers in half. This way we can see how lower numbers compare to higher numbers.<br>
-                <br>
+                numbers in half. This way we can see how lower numbers compare to higher numbers.
             </p>
             <h4>Splits</h4>
             <p>
@@ -26,68 +26,73 @@
                 for this purpose divide our white numbers into two sets of {1, 2, 3,...34} 
                 and {36, 37, 38,...69}. I'll OMIT 35 on purpose from both sets for this 
                 case. If you want to see more detailed stats for any powerball number, 
-                including 35 check this page -> <a href="{{ url_for('powerball.search') }}">STATS PER NUMBER</a><br>
-                <br>
+                including 35 check this page -> <a href="{{ url_for('powerball.search') }}">STATS PER NUMBER</a>
+            </p>
+            <p>
                 All time records can sometimes be misleading. The trends can swing away from the all time stats. 
                 In this analysis you'll quite often see words like ALL TIME, LAST 6 MONTHS, and RECENT TRENDS.
-                The first two are self explenatory. The third one is a bit more vague.<br>
-                <br>
+                The first two are self explenatory. The third one is a bit more vague.
+            </p>
+            <p>
                 Word RECENT can be subjective, but after observing Powerball winning numbers I have settled to 
                 define RECENT TRENDS as the last 26 draws. Now, let's see HOW and IF our splits deviate in our
                 three different time categories.
-
-                <table class="comparison-tables">
-                    <col>
-                    <colgroup span="2"></colgroup>
-                    <colgroup span="2"></colgroup>
-                    <tr>
-                        <th rowspan="2">Splits</th>
-                        <th colspan="2" scope="colgroup" class="all-time">All Time</th>
-                        <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
-                        <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
-                    </tr>
-                    <tr>
-                        <th scope="col" class="all-time">Times Drawn</th>
-                        <th scope="col" class="all-time">Percentage</th>
-                        <th scope="col" class="six-months">Times Drawn</th>
-                        <th scope="col" class="six-months">Percentage</th>
-                        <th scope="col" class="recent-trends">Times Drawn</th>
-                        <th scope="col" class="recent-trends">Percentage</th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Lower{1-34}</th>
-                        <td class="all-time">{{ splits['all-time'][0] }}</td>
-                        <td class="all-time">{{ (splits['all-time'][0] / splits['all-time'][2] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ splits['six-months'][0] }}</td>
-                        <td class="six-months">{{ (splits['six-months'][0] / splits['six-months'][2] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ splits['recent-trends'][0] }}</td>
-                        <td class="recent-trends">{{ (splits['recent-trends'][0] / splits['recent-trends'][2] * 100)|round(2) }} %</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Higher{36-69}</th>
-                        <td class="all-time">{{ splits['all-time'][1] }}</td>
-                        <td class="all-time">{{ (splits['all-time'][1] / splits['all-time'][2] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ splits['six-months'][1] }}</td>
-                        <td class="six-months">{{ (splits['six-months'][1] / splits['six-months'][2] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ splits['recent-trends'][1] }}</td>
-                        <td class="recent-trends">{{ (splits['recent-trends'][1] / splits['recent-trends'][2] * 100)|round(2) }} %</td>
-                    </tr>
-                </table>
-                <span class="probability-minor">
+            </p>
+            <table class="comparison-tables">
+                <col>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <tr>
+                    <th rowspan="2">Splits</th>
+                    <th colspan="2" scope="colgroup" class="all-time">All Time</th>
+                    <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
+                    <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
+                </tr>
+                <tr>
+                    <th scope="col" class="all-time">Times Drawn</th>
+                    <th scope="col" class="all-time">Percentage</th>
+                    <th scope="col" class="six-months">Times Drawn</th>
+                    <th scope="col" class="six-months">Percentage</th>
+                    <th scope="col" class="recent-trends">Times Drawn</th>
+                    <th scope="col" class="recent-trends">Percentage</th>
+                </tr>
+                <tr>
+                    <th scope="row">Lower{1-34}</th>
+                    <td class="all-time">{{ splits['all-time'][0] }}</td>
+                    <td class="all-time">{{ (splits['all-time'][0] / splits['all-time'][2] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ splits['six-months'][0] }}</td>
+                    <td class="six-months">{{ (splits['six-months'][0] / splits['six-months'][2] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ splits['recent-trends'][0] }}</td>
+                    <td class="recent-trends">{{ (splits['recent-trends'][0] / splits['recent-trends'][2] * 100)|round(2) }} %</td>
+                </tr>
+                <tr>
+                    <th scope="row">Higher{36-69}</th>
+                    <td class="all-time">{{ splits['all-time'][1] }}</td>
+                    <td class="all-time">{{ (splits['all-time'][1] / splits['all-time'][2] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ splits['six-months'][1] }}</td>
+                    <td class="six-months">{{ (splits['six-months'][1] / splits['six-months'][2] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ splits['recent-trends'][1] }}</td>
+                    <td class="recent-trends">{{ (splits['recent-trends'][1] / splits['recent-trends'][2] * 100)|round(2) }} %</td>
+                </tr>
+            </table>
+            <p>
+                <span class="probability-minor" id="pm-span">
                     *REMEMBER number 35 is not included in either set
                 </span> 
-            </p>
+            </p>    
             <h4>Sets</h4>
             <p>
                 After splitting numbers in half, I'd like to go a bit further. Looking at 
                 our 69 numbers we can divide them into 7 ALMOST equal sets. 6 of the 
                 7 sets will have 10 numbers while the set with the single digit numbers 
-                will contain 9 numbers.<br>
-                <br>
+                will contain 9 numbers.
+            </p>
+            <p>
                 This isn't perfect because we always NEED to keep in mind that our single digit
                 set will have one less number than the others, but this is as close to perfect 
-                as we can get. <br>
-                <br>
+                as we can get.
+            </p>
+            <p>
                 For the sake of simplicity, I will name these 
                 sets as follows:<br>
                 <br>
@@ -98,110 +103,114 @@
                 FORTIES = {40, 41, 42, 43, 44, 45, 46, 47, 48, 49}<br>
                 FIFTIES = {50, 51, 52, 53, 54, 55, 56, 57, 58, 59}<br>
                 SIXTIES = {60, 61, 62, 63, 64, 65, 66, 67, 68, 69}<br>
-                <br>
-                Now let's check which set gets their numbers drawn the most in Powerball and
-                how they rate in our three different time categories.<br>
-              
-                <table class="comparison-tables">
-                    <col>
-                    <colgroup span="2"></colgroup>
-                    <colgroup span="2"></colgroup>
-                    <tr>
-                        <th rowspan="2">Sets</th>
-                        <th colspan="2" scope="colgroup" class="all-time">All Time</th>
-                        <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
-                        <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
-                    </tr>
-                    <tr>
-                        <th scope="col" class="all-time">Times Drawn</th>
-                        <th scope="col" class="all-time">Percentage</th>
-                        <th scope="col" class="six-months">Times Drawn</th>
-                        <th scope="col" class="six-months">Percentage</th>
-                        <th scope="col" class="recent-trends">Times Drawn</th>
-                        <th scope="col" class="recent-trends">Percentage</th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Ones</th>
-                        <td class="all-time">{{ sets['all-time'][0] }}</td>
-                        <td class="all-time">{{ (sets['all-time'][0] / sets['all-time'][7] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ sets['six-months'][0] }}</td>
-                        <td class="six-months">{{ (sets['six-months'][0] / sets['six-months'][7] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ sets['recent-trends'][0] }}</td>
-                        <td class="recent-trends">{{ (sets['recent-trends'][0] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Tens</th>
-                        <td class="all-time">{{ sets['all-time'][1] }}</td>
-                        <td class="all-time">{{ (sets['all-time'][1] / sets['all-time'][7] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ sets['six-months'][1] }}</td>
-                        <td class="six-months">{{ (sets['six-months'][1] / sets['six-months'][7] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ sets['recent-trends'][1] }}</td>
-                        <td class="recent-trends">{{ (sets['recent-trends'][1] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Twenties</th>
-                        <td class="all-time">{{ sets['all-time'][2] }}</td>
-                        <td class="all-time">{{ (sets['all-time'][2] / sets['all-time'][7] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ sets['six-months'][2] }}</td>
-                        <td class="six-months">{{ (sets['six-months'][2] / sets['six-months'][7] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ sets['recent-trends'][2] }}</td>
-                        <td class="recent-trends">{{ (sets['recent-trends'][2] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Thirties</th>
-                        <td class="all-time">{{ sets['all-time'][3] }}</td>
-                        <td class="all-time">{{ (sets['all-time'][3] / sets['all-time'][7] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ sets['six-months'][3] }}</td>
-                        <td class="six-months">{{ (sets['six-months'][3] / sets['six-months'][7] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ sets['recent-trends'][3] }}</td>
-                        <td class="recent-trends">{{ (sets['recent-trends'][3] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Forties</th>
-                        <td class="all-time">{{ sets['all-time'][4] }}</td>
-                        <td class="all-time">{{ (sets['all-time'][4] / sets['all-time'][7] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ sets['six-months'][4] }}</td>
-                        <td class="six-months">{{ (sets['six-months'][4] / sets['six-months'][7] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ sets['recent-trends'][4] }}</td>
-                        <td class="recent-trends">{{ (sets['recent-trends'][4] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Fifties</th>
-                        <td class="all-time">{{ sets['all-time'][5] }}</td>
-                        <td class="all-time">{{ (sets['all-time'][5] / sets['all-time'][7] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ sets['six-months'][5] }}</td>
-                        <td class="six-months">{{ (sets['six-months'][5] / sets['six-months'][7] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ sets['recent-trends'][5] }}</td>
-                        <td class="recent-trends">{{ (sets['recent-trends'][5] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Sixties</th>
-                        <td class="all-time">{{ sets['all-time'][6] }}</td>
-                        <td class="all-time">{{ (sets['all-time'][6] / sets['all-time'][7] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ sets['six-months'][6] }}</td>
-                        <td class="six-months">{{ (sets['six-months'][6] / sets['six-months'][7] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ sets['recent-trends'][6] }}</td>
-                        <td class="recent-trends">{{ (sets['recent-trends'][6] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
-                    </tr>
-                </table>    
             </p>
+            <p>
+                Now let's check which set gets their numbers drawn the most in Powerball and
+                how they rate in our three different time categories.
+            </p>
+              
+            <table class="comparison-tables">
+                <col>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <tr>
+                    <th rowspan="2">Sets</th>
+                    <th colspan="2" scope="colgroup" class="all-time">All Time</th>
+                    <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
+                    <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
+                </tr>
+                <tr>
+                    <th scope="col" class="all-time">Times Drawn</th>
+                    <th scope="col" class="all-time">Percentage</th>
+                    <th scope="col" class="six-months">Times Drawn</th>
+                    <th scope="col" class="six-months">Percentage</th>
+                    <th scope="col" class="recent-trends">Times Drawn</th>
+                    <th scope="col" class="recent-trends">Percentage</th>
+                </tr>
+                <tr>
+                    <th scope="row">Ones</th>
+                    <td class="all-time">{{ sets['all-time'][0] }}</td>
+                    <td class="all-time">{{ (sets['all-time'][0] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ sets['six-months'][0] }}</td>
+                    <td class="six-months">{{ (sets['six-months'][0] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ sets['recent-trends'][0] }}</td>
+                    <td class="recent-trends">{{ (sets['recent-trends'][0] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tens</th>
+                    <td class="all-time">{{ sets['all-time'][1] }}</td>
+                    <td class="all-time">{{ (sets['all-time'][1] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ sets['six-months'][1] }}</td>
+                    <td class="six-months">{{ (sets['six-months'][1] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ sets['recent-trends'][1] }}</td>
+                    <td class="recent-trends">{{ (sets['recent-trends'][1] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
+                </tr>
+                <tr>
+                    <th scope="row">Twenties</th>
+                    <td class="all-time">{{ sets['all-time'][2] }}</td>
+                    <td class="all-time">{{ (sets['all-time'][2] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ sets['six-months'][2] }}</td>
+                    <td class="six-months">{{ (sets['six-months'][2] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ sets['recent-trends'][2] }}</td>
+                    <td class="recent-trends">{{ (sets['recent-trends'][2] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
+                </tr>
+                <tr>
+                    <th scope="row">Thirties</th>
+                    <td class="all-time">{{ sets['all-time'][3] }}</td>
+                    <td class="all-time">{{ (sets['all-time'][3] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ sets['six-months'][3] }}</td>
+                    <td class="six-months">{{ (sets['six-months'][3] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ sets['recent-trends'][3] }}</td>
+                    <td class="recent-trends">{{ (sets['recent-trends'][3] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
+                </tr>
+                <tr>
+                    <th scope="row">Forties</th>
+                    <td class="all-time">{{ sets['all-time'][4] }}</td>
+                    <td class="all-time">{{ (sets['all-time'][4] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ sets['six-months'][4] }}</td>
+                    <td class="six-months">{{ (sets['six-months'][4] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ sets['recent-trends'][4] }}</td>
+                    <td class="recent-trends">{{ (sets['recent-trends'][4] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
+                </tr>
+                <tr>
+                    <th scope="row">Fifties</th>
+                    <td class="all-time">{{ sets['all-time'][5] }}</td>
+                    <td class="all-time">{{ (sets['all-time'][5] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ sets['six-months'][5] }}</td>
+                    <td class="six-months">{{ (sets['six-months'][5] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ sets['recent-trends'][5] }}</td>
+                    <td class="recent-trends">{{ (sets['recent-trends'][5] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
+                </tr>
+                <tr>
+                    <th scope="row">Sixties</th>
+                    <td class="all-time">{{ sets['all-time'][6] }}</td>
+                    <td class="all-time">{{ (sets['all-time'][6] / sets['all-time'][7] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ sets['six-months'][6] }}</td>
+                    <td class="six-months">{{ (sets['six-months'][6] / sets['six-months'][7] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ sets['recent-trends'][6] }}</td>
+                    <td class="recent-trends">{{ (sets['recent-trends'][6] / sets['recent-trends'][7] * 100)|round(2) }} %</td>
+                </tr>
+            </table>    
             <h4>Winning Hands</h4>
             <p>
                 So, why did I bother to create sets of numbers? If you observe winning 
                 numbers you'll quickly notice something. Quite often a few or more 
-                winning numbers belong to the same set.<br>
-                <br>
+                winning numbers belong to the same set.
+            </p>
+            <p>
                 For example, a winning hand 
                 from <span class="text">Monday, September 2nd 2024</span> had following 
                 numbers 8, <span class="text">42, 46, 48,</span> 53. 
                 It is easy to notice that 3 out of 5 numbers belong to our established set 
-                of FORTIES.<br>
-                <br>
+                of FORTIES.
+            </p>
+            <p>
                 A winning hand from <span class="text">Monday, August 26th 2024 </span>
                 had following numbers <span class="text">2, 4,</span> 23, 
                 <span class="text">68, 69</span>. Again, it is easy to spot that 2 of 
-                our numbers belong to the set of ONES and the other 2 belong to the set of SIXTIES.<br>
-                <br>
+                our numbers belong to the set of ONES and the other 2 belong to the set of SIXTIES.
+            </p>
+            <p>
                 Hopefully, this little introduction will help you with what follows. In an attempt to make this 
                 easier for everyone to understand, I will modify the naming convention from Poker 
                 and establish the following WINNING HANDS:<br>
@@ -213,108 +222,111 @@
                 FULL HOUSE = (example: 6, 9, <span class="text">20, 23, 27</span>)<br>
                 POKER = (example: 9, <span class="text">23, 25, 26, 29</span>)<br>
                 FLUSH = (example: <span class="text">31, 33, 35, 37, 39</span>)<br>
-                <br>
+            </p>
+            <p>
                 Now, let's see which WINNING HAND occurs the most in Powerball
-                <table class="comparison-tables">
-                    <col>
-                    <colgroup span="2"></colgroup>
-                    <colgroup span="2"></colgroup>
-                    <tr>
-                        <th rowspan="2">Hands</th>
-                        <th colspan="2" scope="colgroup" class="all-time">All Time</th>
-                        <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
-                        <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
-                        <th colspan="2" scope="colgroup" class="extra-info">Extra Info</th>
-                    </tr>
-                    <tr>
-                        <th scope="col" class="all-time">Times Drawn</th>
-                        <th scope="col" class="all-time">Percentage</th>
-                        <th scope="col" class="six-months">Times Drawn</th>
-                        <th scope="col" class="six-months">Percentage</th>
-                        <th scope="col" class="recent-trends">Times Drawn</th>
-                        <th scope="col" class="recent-trends">Percentage</th>
-                        <th scope="col" class="extra-info">Last Drawn</th>
-                        <th scope="col" class="extra-info">Most Winning Set</th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Singles</th>
-                        <td class="all-time">{{ winning_hands['singles'][0] }}</td>
-                        <td class="all-time">{{ (winning_hands['singles'][0]/total_winning_hands * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ winning_hands['singles'][1] }}</td>
-                        <td class="six-months">{{ (winning_hands['singles'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ winning_hands['singles'][2] }}</td>
-                        <td class="recent-trends">{{ (winning_hands['singles'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">11-04-2024</td>
-                        <td class="extra-info">N/A</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">PAIR</th>
-                        <td class="all-time">{{ winning_hands['pairs'][0] }}</td>
-                        <td class="all-time">{{ (winning_hands['pairs'][0]/total_winning_hands * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ winning_hands['pairs'][1] }}</td>
-                        <td class="six-months">{{ (winning_hands['pairs'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ winning_hands['pairs'][2] }}</td>
-                        <td class="recent-trends">{{ (winning_hands['pairs'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">11-11-2024</td>
-                        <td class="extra-info">Twenties</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Two Pairs</th>
-                        <td class="all-time">{{ winning_hands['two_pairs'][0] }}</td>
-                        <td class="all-time">{{ (winning_hands['two_pairs'][0]/total_winning_hands * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ winning_hands['two_pairs'][1] }}</td>
-                        <td class="six-months">{{ (winning_hands['two_pairs'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ winning_hands['two_pairs'][2] }}</td>
-                        <td class="recent-trends">{{ (winning_hands['two_pairs'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">10-14-2024</td>
-                        <td class="extra-info">Fifties / Sixties</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Three of Set</th>
-                        <td class="all-time">{{ winning_hands['three_of_set'][0] }}</td>
-                        <td class="all-time">{{ (winning_hands['three_of_set'][0]/total_winning_hands * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ winning_hands['three_of_set'][1] }}</td>
-                        <td class="six-months">{{ (winning_hands['three_of_set'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ winning_hands['three_of_set'][2] }}</td>
-                        <td class="recent-trends">{{ (winning_hands['three_of_set'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">09-02-2024</td>
-                        <td class="extra-info">thirties & Sixties</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Full house</th>
-                        <td class="all-time">{{ winning_hands['full_house'][0] }}</td>
-                        <td class="all-time">{{ (winning_hands['full_house'][0]/total_winning_hands * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ winning_hands['full_house'][1] }}</td>
-                        <td class="six-months">{{ (winning_hands['full_house'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ winning_hands['full_house'][2] }}</td></td>
-                        <td class="recent-trends">{{ (winning_hands['full_house'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">01-31-2024</td>
-                        <td class="extra-info">Fifties / Sixties</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Poker</th>
-                        <td class="all-time">{{ winning_hands['poker'][0] }}</td>
-                        <td class="all-time">{{ (winning_hands['poker'][0]/total_winning_hands * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ winning_hands['poker'][1] }}</td>
-                        <td class="six-months">{{ (winning_hands['poker'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ winning_hands['poker'][2] }}</td>
-                        <td class="recent-trends">{{ (winning_hands['poker'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">08-26-2023</td>
-                        <td class="extra-info">Thirties</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Flush</th>
-                        <td class="all-time">{{ winning_hands['flush'][0] }}</td>
-                        <td class="all-time">{{ (winning_hands['flush'][0]/total_winning_hands * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ winning_hands['flush'][1] }}</td>
-                        <td class="six-months">{{ (winning_hands['flush'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ winning_hands['flush'][2] }}</td>
-                        <td class="recent-trends">{{ (winning_hands['flush'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">N/A</td>
-                        <td class="extra-info">N/A</td>
-                    </tr>
-                </table>    
-                <span class="probability-minor">
+            </p>
+            <table class="comparison-tables">
+                <col>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <tr>
+                    <th rowspan="2">Hands</th>
+                    <th colspan="2" scope="colgroup" class="all-time">All Time</th>
+                    <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
+                    <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
+                    <th colspan="2" scope="colgroup" class="extra-info">Extra Info</th>
+                </tr>
+                <tr>
+                    <th scope="col" class="all-time">Times Drawn</th>
+                    <th scope="col" class="all-time">Percentage</th>
+                    <th scope="col" class="six-months">Times Drawn</th>
+                    <th scope="col" class="six-months">Percentage</th>
+                    <th scope="col" class="recent-trends">Times Drawn</th>
+                    <th scope="col" class="recent-trends">Percentage</th>
+                    <th scope="col" class="extra-info">Last Drawn</th>
+                    <th scope="col" class="extra-info">Most Winning Set</th>
+                </tr>
+                <tr>
+                    <th scope="row">Singles</th>
+                    <td class="all-time">{{ winning_hands['singles'][0] }}</td>
+                    <td class="all-time">{{ (winning_hands['singles'][0]/total_winning_hands * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ winning_hands['singles'][1] }}</td>
+                    <td class="six-months">{{ (winning_hands['singles'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ winning_hands['singles'][2] }}</td>
+                    <td class="recent-trends">{{ (winning_hands['singles'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">11-04-2024</td>
+                    <td class="extra-info">N/A</td>
+                </tr>
+                <tr>
+                    <th scope="row">PAIR</th>
+                    <td class="all-time">{{ winning_hands['pairs'][0] }}</td>
+                    <td class="all-time">{{ (winning_hands['pairs'][0]/total_winning_hands * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ winning_hands['pairs'][1] }}</td>
+                    <td class="six-months">{{ (winning_hands['pairs'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ winning_hands['pairs'][2] }}</td>
+                    <td class="recent-trends">{{ (winning_hands['pairs'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">11-13-2024</td>
+                    <td class="extra-info">Twenties</td>
+                </tr>
+                <tr>
+                    <th scope="row">Two Pairs</th>
+                    <td class="all-time">{{ winning_hands['two_pairs'][0] }}</td>
+                    <td class="all-time">{{ (winning_hands['two_pairs'][0]/total_winning_hands * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ winning_hands['two_pairs'][1] }}</td>
+                    <td class="six-months">{{ (winning_hands['two_pairs'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ winning_hands['two_pairs'][2] }}</td>
+                    <td class="recent-trends">{{ (winning_hands['two_pairs'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">10-14-2024</td>
+                    <td class="extra-info">Fifties / Sixties</td>
+                </tr>
+                <tr>
+                    <th scope="row">Three of Set</th>
+                    <td class="all-time">{{ winning_hands['three_of_set'][0] }}</td>
+                    <td class="all-time">{{ (winning_hands['three_of_set'][0]/total_winning_hands * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ winning_hands['three_of_set'][1] }}</td>
+                    <td class="six-months">{{ (winning_hands['three_of_set'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ winning_hands['three_of_set'][2] }}</td>
+                    <td class="recent-trends">{{ (winning_hands['three_of_set'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">09-02-2024</td>
+                    <td class="extra-info">thirties & Sixties</td>
+                </tr>
+                <tr>
+                    <th scope="row">Full house</th>
+                    <td class="all-time">{{ winning_hands['full_house'][0] }}</td>
+                    <td class="all-time">{{ (winning_hands['full_house'][0]/total_winning_hands * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ winning_hands['full_house'][1] }}</td>
+                    <td class="six-months">{{ (winning_hands['full_house'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ winning_hands['full_house'][2] }}</td></td>
+                    <td class="recent-trends">{{ (winning_hands['full_house'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">01-31-2024</td>
+                    <td class="extra-info">Fifties / Sixties</td>
+                </tr>
+                <tr>
+                    <th scope="row">Poker</th>
+                    <td class="all-time">{{ winning_hands['poker'][0] }}</td>
+                    <td class="all-time">{{ (winning_hands['poker'][0]/total_winning_hands * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ winning_hands['poker'][1] }}</td>
+                    <td class="six-months">{{ (winning_hands['poker'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ winning_hands['poker'][2] }}</td>
+                    <td class="recent-trends">{{ (winning_hands['poker'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">08-26-2023</td>
+                    <td class="extra-info">Thirties</td>
+                </tr>
+                <tr>
+                    <th scope="row">Flush</th>
+                    <td class="all-time">{{ winning_hands['flush'][0] }}</td>
+                    <td class="all-time">{{ (winning_hands['flush'][0]/total_winning_hands * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ winning_hands['flush'][1] }}</td>
+                    <td class="six-months">{{ (winning_hands['flush'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ winning_hands['flush'][2] }}</td>
+                    <td class="recent-trends">{{ (winning_hands['flush'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">N/A</td>
+                    <td class="extra-info">N/A</td>
+                </tr>
+            </table> 
+            <p>   
+                <span class="probability-minor" id="pm-span2">
                     *REMEMBER that TWO PAIRS and FULL HOUSE will have two sets appearing together
                     as winners in a single draw
                 </span>
@@ -323,99 +335,101 @@
             <p>
                 We see that PAIRS are a dominating winning hand in Powerball, coming in as winners
                 in over 50% of draws. Naturally you'd like to have more information about
-                how often each set comes as the WINNING PAIR in Powerball. <br>
-                <table class="comparison-tables">
-                    <col>
-                    <colgroup span="2"></colgroup>
-                    <colgroup span="2"></colgroup>
-                    <tr>
-                        <th rowspan="2">Sets</th>
-                        <th colspan="2" scope="colgroup" class="all-time">All Time</th>
-                        <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
-                        <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
-                        <th colspan="2" scope="colgroup" class="extra-info">Drawing Info</th>
-                    </tr>
-                    <tr>
-                        <th scope="col" class="all-time">Times Drawn</th>
-                        <th scope="col" class="all-time">Percentage</th>
-                        <th scope="col" class="six-months">Times Drawn</th>
-                        <th scope="col" class="six-months">Percentage</th>
-                        <th scope="col" class="recent-trends">Times Drawn</th>
-                        <th scope="col" class="recent-trends">Percentage</th>
-                        <th scope="col" class="extra-info">Last Drawn</th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Ones</th>
-                        <td class="all-time">{{ pair_count[1][0] }}</td>
-                        <td class="all-time">{{ (pair_count[1][0]/total_pairs * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ pair_count[1][1] }}</td>
-                        <td class="six-months">{{ (pair_count[1][1]/total_pairs_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ pair_count[1][2] }}</td>
-                        <td class="recent-trends">{{ (pair_count[1][2]/total_pairs_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">10-02-2024</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Tens</th>
-                        <td class="all-time">{{ pair_count[10][0] }}</td>
-                        <td class="all-time">{{ (pair_count[10][0]/total_pairs * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ pair_count[10][1] }}</td>
-                        <td class="six-months">{{ (pair_count[10][1]/total_pairs_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ pair_count[10][2] }}</td>
-                        <td class="recent-trends">{{ (pair_count[10][2]/total_pairs_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">11-06-2024</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Twenties</th>
-                        <td class="all-time">{{ pair_count[20][0] }}</td>
-                        <td class="all-time">{{ (pair_count[20][0]/total_pairs * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ pair_count[20][1] }}</td>
-                        <td class="six-months">{{ (pair_count[20][1]/total_pairs_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ pair_count[20][2] }}</td>
-                        <td class="recent-trends">{{ (pair_count[20][2]/total_pairs_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">11-11-2024</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Thirties</th>
-                        <td class="all-time">{{ pair_count[30][0] }}</td>
-                        <td class="all-time">{{ (pair_count[30][0]/total_pairs * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ pair_count[30][1] }}</td>
-                        <td class="six-months">{{ (pair_count[30][1]/total_pairs_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ pair_count[30][2] }}</td>
-                        <td class="recent-trends">{{ (pair_count[30][2]/total_pairs_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">10-16-2024</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Forties</th>
-                        <td class="all-time">{{ pair_count[40][0] }}</td>
-                        <td class="all-time">{{ (pair_count[40][0]/total_pairs * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ pair_count[40][1] }}</td>
-                        <td class="six-months">{{ (pair_count[40][1]/total_pairs_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ pair_count[40][2] }}</td></td>
-                        <td class="recent-trends">{{ (pair_count[40][2]/total_pairs_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">11-02-2024</td>          
-                    </tr>
-                    <tr>
-                        <th scope="row">Fifties</th>
-                        <td class="all-time">{{ pair_count[50][0] }}</td>
-                        <td class="all-time">{{ (pair_count[50][0]/total_pairs * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ pair_count[50][1] }}</td>
-                        <td class="six-months">{{ (pair_count[50][1]/total_pairs_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ pair_count[50][2] }}</td>
-                        <td class="recent-trends">{{ (pair_count[50][2]/total_pairs_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">11-09-2024</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Sixties</th>
-                        <td class="all-time">{{ pair_count[60][0] }}</td>
-                        <td class="all-time">{{ (pair_count[60][0]/total_pairs * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ pair_count[60][1] }}</td>
-                        <td class="six-months">{{ (pair_count[60][1]/total_pairs_6 * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ pair_count[60][2] }}</td>
-                        <td class="recent-trends">{{ (pair_count[60][2]/total_pairs_recent * 100)|round(2) }} %</td>
-                        <td class="extra-info">10-21-2024</td>
-                    </tr>
-                </table>    
-                <span class="probability-minor">
+                how often each set comes as the WINNING PAIR in Powerball.
+            </p>
+            <table class="comparison-tables">
+                <col>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <tr>
+                    <th rowspan="2">Sets</th>
+                    <th colspan="2" scope="colgroup" class="all-time">All Time</th>
+                    <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
+                    <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
+                    <th colspan="2" scope="colgroup" class="extra-info">Drawing Info</th>
+                </tr>
+                <tr>
+                    <th scope="col" class="all-time">Times Drawn</th>
+                    <th scope="col" class="all-time">Percentage</th>
+                    <th scope="col" class="six-months">Times Drawn</th>
+                    <th scope="col" class="six-months">Percentage</th>
+                    <th scope="col" class="recent-trends">Times Drawn</th>
+                    <th scope="col" class="recent-trends">Percentage</th>
+                    <th scope="col" class="extra-info">Last Drawn</th>
+                </tr>
+                <tr>
+                    <th scope="row">Ones</th>
+                    <td class="all-time">{{ pair_count[1][0] }}</td>
+                    <td class="all-time">{{ (pair_count[1][0]/total_pairs * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ pair_count[1][1] }}</td>
+                    <td class="six-months">{{ (pair_count[1][1]/total_pairs_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ pair_count[1][2] }}</td>
+                    <td class="recent-trends">{{ (pair_count[1][2]/total_pairs_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">10-02-2024</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tens</th>
+                    <td class="all-time">{{ pair_count[10][0] }}</td>
+                    <td class="all-time">{{ (pair_count[10][0]/total_pairs * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ pair_count[10][1] }}</td>
+                    <td class="six-months">{{ (pair_count[10][1]/total_pairs_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ pair_count[10][2] }}</td>
+                    <td class="recent-trends">{{ (pair_count[10][2]/total_pairs_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">11-06-2024</td>
+                </tr>
+                <tr>
+                    <th scope="row">Twenties</th>
+                    <td class="all-time">{{ pair_count[20][0] }}</td>
+                    <td class="all-time">{{ (pair_count[20][0]/total_pairs * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ pair_count[20][1] }}</td>
+                    <td class="six-months">{{ (pair_count[20][1]/total_pairs_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ pair_count[20][2] }}</td>
+                    <td class="recent-trends">{{ (pair_count[20][2]/total_pairs_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">11-13-2024</td>
+                </tr>
+                <tr>
+                    <th scope="row">Thirties</th>
+                    <td class="all-time">{{ pair_count[30][0] }}</td>
+                    <td class="all-time">{{ (pair_count[30][0]/total_pairs * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ pair_count[30][1] }}</td>
+                    <td class="six-months">{{ (pair_count[30][1]/total_pairs_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ pair_count[30][2] }}</td>
+                    <td class="recent-trends">{{ (pair_count[30][2]/total_pairs_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">10-16-2024</td>
+                </tr>
+                <tr>
+                    <th scope="row">Forties</th>
+                    <td class="all-time">{{ pair_count[40][0] }}</td>
+                    <td class="all-time">{{ (pair_count[40][0]/total_pairs * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ pair_count[40][1] }}</td>
+                    <td class="six-months">{{ (pair_count[40][1]/total_pairs_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ pair_count[40][2] }}</td></td>
+                    <td class="recent-trends">{{ (pair_count[40][2]/total_pairs_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">11-02-2024</td>          
+                </tr>
+                <tr>
+                    <th scope="row">Fifties</th>
+                    <td class="all-time">{{ pair_count[50][0] }}</td>
+                    <td class="all-time">{{ (pair_count[50][0]/total_pairs * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ pair_count[50][1] }}</td>
+                    <td class="six-months">{{ (pair_count[50][1]/total_pairs_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ pair_count[50][2] }}</td>
+                    <td class="recent-trends">{{ (pair_count[50][2]/total_pairs_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">11-09-2024</td>
+                </tr>
+                <tr>
+                    <th scope="row">Sixties</th>
+                    <td class="all-time">{{ pair_count[60][0] }}</td>
+                    <td class="all-time">{{ (pair_count[60][0]/total_pairs * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ pair_count[60][1] }}</td>
+                    <td class="six-months">{{ (pair_count[60][1]/total_pairs_6 * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ pair_count[60][2] }}</td>
+                    <td class="recent-trends">{{ (pair_count[60][2]/total_pairs_recent * 100)|round(2) }} %</td>
+                    <td class="extra-info">10-21-2024</td>
+                </tr>
+            </table>
+            <p>    
+                <span class="probability-minor" id="pm-span3">
                     *PERCENTAGE in this table is in regard of the total drawn pairs
                 </span>
             </p>

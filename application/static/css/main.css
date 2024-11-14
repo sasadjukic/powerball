@@ -95,10 +95,6 @@
     font-size: 1.5rem;
 }
 
-    .index-title h4 {
-        margin-top: 20px;
-    }
-
     .index-note {
         font-size:.9rem;
     }
@@ -111,26 +107,18 @@
     }
 
 .rules-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
     max-width: 600px;
     font-family: var(--main-font);
     color: var(--main-color);
     font-size: 1.5rem;
 }
-    .rules-content h4 {
-        padding: 15px;
-    }
 
     .rules-content p {
         text-align: left;
-        margin: 10px 10px;
+        margin-bottom: 25px;
     }
 
     .rules-content p a {
@@ -243,14 +231,9 @@ form {
     }
 
 .hands-content {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 265%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
     max-width: 900px;
     font-family: var(--main-font);
     color: var(--main-color);
@@ -260,7 +243,6 @@ form {
     .hands-content h4 {
         text-transform: uppercase;
         font-weight: var(--super-bold);
-        padding: 15px;
     }
 
     .hands-content p {
@@ -268,16 +250,23 @@ form {
         margin-bottom: 25px;
     }
 
-    .hands-content table {
-        margin: 15px 15px;
-    }
-
     .hands-minor {
+        display: block;
+        text-align: center;
         text-transform: uppercase;
         font-size: 1rem;
     }
 
+    #pm-span, #pm-span2, #pm-span3 {
+        display: block;
+        text-align: center;
+    }
+
     .comparison-tables {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
         font-size: 1.25rem;
         text-transform: uppercase;
     }
@@ -299,14 +288,9 @@ form {
         }
 
 .hands-content-red {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        top: 125%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
         max-width: 900px;
         font-family: var(--main-font);
         color: var(--main-color);
@@ -329,14 +313,9 @@ form {
         }
 
 .trends-content {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
     max-width: 900px;
     font-family: var(--main-font);
     color: var(--main-color);
@@ -344,8 +323,8 @@ form {
 }
 
     .trends-content p {
-        margin: 10px 10px;
         text-align: left;
+        margin-bottom: 25px;
     }
 
     .trends-table-title {
@@ -354,8 +333,12 @@ form {
         font-weight: var(--super-bold);
     }
 
-h3, h4, p {
+h3, h4, h5, p {
     text-align: center;
+}
+
+h4 {
+    padding: 15px;
 }
 
 /* center all images */
@@ -446,14 +429,9 @@ img {
 }
 
 .fun-facts {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
     max-width: 900px;
     font-family: var(--main-font);
     color: var(--main-color);
@@ -469,6 +447,17 @@ img {
         text-transform: uppercase;
         font-weight: var(--super-bold);
         padding: 15px;
+    }
+
+    #tr-records, #tw-records {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+    }
+
+    #bs-streaks {
+        margin-bottom: 50px;
     }
 
 .probability-content {

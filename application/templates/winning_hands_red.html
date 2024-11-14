@@ -18,126 +18,132 @@
             <p>
                 Let's start with easy stuff and split our red numbers to two equall sets. 
                 LOWER set will get numbers {1, 2, 3,...13}, while our HIGHER 
-                set will contain numbers {14, 15, 16,... 26}<br>
-                <br>
-                Let's see the winning rates of our splits over time<br>
-                <br>
-                <table class="comparison-tables">
-                    <col>
-                    <colgroup span="2"></colgroup>
-                    <colgroup span="2"></colgroup>
-                    <tr>
-                        <th rowspan="2">Splits</th>
-                        <th colspan="2" scope="colgroup" class="all-time">All Time</th>
-                        <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
-                        <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
-                    </tr>
-                    <tr>
-                        <th scope="col" class="all-time">Times Drawn</th>
-                        <th scope="col" class="all-time">Percentage</th>
-                        <th scope="col" class="six-months">Times Drawn</th>
-                        <th scope="col" class="six-months">Percentage</th>
-                        <th scope="col" class="recent-trends">Times Drawn</th>
-                        <th scope="col" class="recent-trends">Percentage</th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Lower{1-13}</th>
-                        <td class="all-time">{{ splits['all-time'][0] }}</td>
-                        <td class="all-time">{{ (splits['all-time'][0] / splits['all-time'][2] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ splits['six-months'][0] }}</td>
-                        <td class="six-months">{{ (splits['six-months'][0] / splits['six-months'][2] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ splits['recent-trends'][0] }}</td>
-                        <td class="recent-trends">{{ (splits['recent-trends'][0] / splits['recent-trends'][2] * 100)|round(2) }} %</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Higher{14-26}</th>
-                        <td class="all-time">{{ splits['all-time'][1] }}</td>
-                        <td class="all-time">{{ (splits['all-time'][1] / splits['all-time'][2] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ splits['six-months'][1] }}</td>
-                        <td class="six-months">{{ (splits['six-months'][1] / splits['six-months'][2] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ splits['recent-trends'][1] }}</td>
-                        <td class="recent-trends">{{ (splits['recent-trends'][1] / splits['recent-trends'][2] * 100)|round(2) }} %</td>
-                    </tr>
-                </table> 
+                set will contain numbers {14, 15, 16,... 26}
             </p>
+            <p>
+                Let's see the winning rates of our splits over time
+            </p>
+               
+            <table class="comparison-tables">
+                <col>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <tr>
+                    <th rowspan="2">Splits</th>
+                    <th colspan="2" scope="colgroup" class="all-time">All Time</th>
+                    <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
+                    <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
+                </tr>
+                <tr>
+                    <th scope="col" class="all-time">Times Drawn</th>
+                    <th scope="col" class="all-time">Percentage</th>
+                    <th scope="col" class="six-months">Times Drawn</th>
+                    <th scope="col" class="six-months">Percentage</th>
+                    <th scope="col" class="recent-trends">Times Drawn</th>
+                    <th scope="col" class="recent-trends">Percentage</th>
+                </tr>
+                <tr>
+                    <th scope="row">Lower{1-13}</th>
+                    <td class="all-time">{{ splits['all-time'][0] }}</td>
+                    <td class="all-time">{{ (splits['all-time'][0] / splits['all-time'][2] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ splits['six-months'][0] }}</td>
+                    <td class="six-months">{{ (splits['six-months'][0] / splits['six-months'][2] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ splits['recent-trends'][0] }}</td>
+                    <td class="recent-trends">{{ (splits['recent-trends'][0] / splits['recent-trends'][2] * 100)|round(2) }} %</td>
+                </tr>
+                <tr>
+                    <th scope="row">Higher{14-26}</th>
+                    <td class="all-time">{{ splits['all-time'][1] }}</td>
+                    <td class="all-time">{{ (splits['all-time'][1] / splits['all-time'][2] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ splits['six-months'][1] }}</td>
+                    <td class="six-months">{{ (splits['six-months'][1] / splits['six-months'][2] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ splits['recent-trends'][1] }}</td>
+                    <td class="recent-trends">{{ (splits['recent-trends'][1] / splits['recent-trends'][2] * 100)|round(2) }} %</td>
+                </tr>
+            </table> 
+   
             <h4>Sets</h4>
             <p>
                 This is when our RED numbers get tricky. If we follow the same logic we 
                 applied to our white numbers, our red numbers can be sorted into 3 
                 unequall sets of numbers. And unequall is a mild word here. Is this
-                going to ruin our analysis?<br>
-                <br> 
+                going to ruin our analysis?
+            </p>
+            <p>
                 Remember, trends can get surprising. So, although having 3 unequall
                 sets is FAR FROM ideal, we will still be able to get some interesting 
-                information.<br>
-                <br>
+                information.
+            </p>    
+            <p>
                 Our sets of RED balls will look like this:<br>
                 <br>
                 ONES = {1, 2, 3, 4, 5, 6, 7, 8, 9}<br>
                 TENS = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19}<br>
                 TWENTIES = {20, 21, 22, 23, 24, 25, 26}<br>
-                <br>
-                <table class="comparison-tables">
-                    <col>
-                    <colgroup span="2"></colgroup>
-                    <colgroup span="2"></colgroup>
-                    <tr>
-                        <th rowspan="2">Sets</th>
-                        <th colspan="2" scope="colgroup" class="all-time">All Time</th>
-                        <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
-                        <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
-                    </tr>
-                    <tr>
-                        <th scope="col" class="all-time">Times Drawn</th>
-                        <th scope="col" class="all-time">Percentage</th>
-                        <th scope="col" class="six-months">Times Drawn</th>
-                        <th scope="col" class="six-months">Percentage</th>
-                        <th scope="col" class="recent-trends">Times Drawn</th>
-                        <th scope="col" class="recent-trends">Percentage</th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Ones</th>
-                        <td class="all-time">{{ sets['all-time'][0] }}</td>
-                        <td class="all-time">{{ (sets['all-time'][0] / sets['all-time'][3] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ sets['six-months'][0] }}</td>
-                        <td class="six-months">{{ (sets['six-months'][0] / sets['six-months'][3] * 100)|round(2)}} %</td>
-                        <td class="recent-trends">{{ sets['recent-trends'][0] }}</td>
-                        <td class="recent-trends">{{ (sets['recent-trends'][0] / sets['recent-trends'][3] * 100)|round(2) }} %</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Tens</th>
-                        <td class="all-time">{{ sets['all-time'][1] }}</td>
-                        <td class="all-time">{{ (sets['all-time'][1] / sets['all-time'][3] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ sets['six-months'][1] }}</td>
-                        <td class="six-months">{{ (sets['six-months'][1] / sets['six-months'][3] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ sets['recent-trends'][1] }}</td>
-                        <td class="recent-trends">{{ (sets['recent-trends'][1] / sets['recent-trends'][3] * 100)|round(2) }} %</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Twenties</th>
-                        <td class="all-time">{{ sets['all-time'][2] }}</td>
-                        <td class="all-time">{{ (sets['all-time'][2] / sets['all-time'][3] * 100)|round(2) }} %</td>
-                        <td class="six-months">{{ sets['six-months'][2] }}</td>
-                        <td class="six-months">{{ (sets['six-months'][2] / sets['six-months'][3] * 100)|round(2) }} %</td>
-                        <td class="recent-trends">{{ sets['recent-trends'][2] }}</td>
-                        <td class="recent-trends">{{ (sets['recent-trends'][2] / sets['recent-trends'][3] * 100)|round(2) }} %</td>
-                    </tr>
-                </table> 
             </p>
+            <table class="comparison-tables">
+                <col>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <tr>
+                    <th rowspan="2">Sets</th>
+                    <th colspan="2" scope="colgroup" class="all-time">All Time</th>
+                    <th colspan="2" scope="colgroup" class="six-months">Last 6 Months</th>
+                    <th colspan="2" scope="colgroup" class="recent-trends">Recent Trends</th>
+                </tr>
+                <tr>
+                    <th scope="col" class="all-time">Times Drawn</th>
+                    <th scope="col" class="all-time">Percentage</th>
+                    <th scope="col" class="six-months">Times Drawn</th>
+                    <th scope="col" class="six-months">Percentage</th>
+                    <th scope="col" class="recent-trends">Times Drawn</th>
+                    <th scope="col" class="recent-trends">Percentage</th>
+                </tr>
+                <tr>
+                    <th scope="row">Ones</th>
+                    <td class="all-time">{{ sets['all-time'][0] }}</td>
+                    <td class="all-time">{{ (sets['all-time'][0] / sets['all-time'][3] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ sets['six-months'][0] }}</td>
+                    <td class="six-months">{{ (sets['six-months'][0] / sets['six-months'][3] * 100)|round(2)}} %</td>
+                    <td class="recent-trends">{{ sets['recent-trends'][0] }}</td>
+                    <td class="recent-trends">{{ (sets['recent-trends'][0] / sets['recent-trends'][3] * 100)|round(2) }} %</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tens</th>
+                    <td class="all-time">{{ sets['all-time'][1] }}</td>
+                    <td class="all-time">{{ (sets['all-time'][1] / sets['all-time'][3] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ sets['six-months'][1] }}</td>
+                    <td class="six-months">{{ (sets['six-months'][1] / sets['six-months'][3] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ sets['recent-trends'][1] }}</td>
+                    <td class="recent-trends">{{ (sets['recent-trends'][1] / sets['recent-trends'][3] * 100)|round(2) }} %</td>
+                </tr>
+                <tr>
+                    <th scope="row">Twenties</th>
+                    <td class="all-time">{{ sets['all-time'][2] }}</td>
+                    <td class="all-time">{{ (sets['all-time'][2] / sets['all-time'][3] * 100)|round(2) }} %</td>
+                    <td class="six-months">{{ sets['six-months'][2] }}</td>
+                    <td class="six-months">{{ (sets['six-months'][2] / sets['six-months'][3] * 100)|round(2) }} %</td>
+                    <td class="recent-trends">{{ sets['recent-trends'][2] }}</td>
+                    <td class="recent-trends">{{ (sets['recent-trends'][2] / sets['recent-trends'][3] * 100)|round(2) }} %</td>
+                </tr>
+            </table> 
+         
             <h4>POWERBALL MATRIX</h4>
             <p>
                 If you look at the Powerball's prizes it is easy to notice the importance of
                 getting the red ball (also called POWERBALL) correct. Out of 9 prizes that 
-                Powerball offers, 6 of them are tied to the red ball, including the grand prize.<br>
-                <br>
+                Powerball offers, 6 of them are tied to the red ball, including the grand prize.
+            </p>
+            <p>    
                 So, the red ball is a sort of an anchor to the rest of your chosen numbers. 
                 We can't create analysis of the so called "WINNING HANDS" for the red number, like
                 we did for the WHITE numbers, but what we can do is to create an analysis of
-                WHAT white numbers win together with certain red numbers.<br>
-                <br>
+                WHAT white numbers win together with certain red numbers.
+            </p>
+            <p>
                 My naming conventions aren't great, so I named this
                 the POWERBALL MATRIX and you can check it out here ->
-                <a href="#">POWERBALL MATRIX</a><br>
+                <a href="#">POWERBALL MATRIX</a>
             </p>
         </div>
     {% endblock %}

@@ -15,7 +15,7 @@
                 number of consecutive draws your number has NOT been drawn.
             </p>
             <h5>-- White Numbers --</h5>
-            <table class="basic-stats">
+            <table class="probability-table-white">
                 <tr>
                     <th>Number</th>
                     <th>Max Drawing Drought (MDD)</th>
@@ -27,19 +27,19 @@
                     <td>35</td>
                     <td>111</td>
                     <td>02/10/2018 - 03/02/2019</td>
-                    <td>65.45</td>
+                    <td>65</td>
                     <td>Highest</td>
                 </tr>
                 <tr>
                     <td>61</td>
                     <td>40</td>
                     <td>07/29/2020 - 12/12/2020</td>
-                    <td>65.45</td>
+                    <td>65</td>
                     <td>Lowest</td>
                 </tr>
             </table>
-            <h5>-- Red Numbers --</h5>
-            <table class="basic-stats">
+            <h5>-- Red Numbers (Powerball) --</h5>
+            <table class="probability-table-red">
                 <tr>
                     <th>Number</th>
                     <th>Max Drawing Drought (MDD)</th>
@@ -51,15 +51,102 @@
                     <td>15</td>
                     <td>200</td>
                     <td>09/21/2019 - 08-21-2021</td>
-                    <td>117.46</td>
+                    <td>117</td>
                     <td>Highest</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>67</td>
                     <td>01/24/2018 - 09/12/2018</td>
-                    <td>117.46</td>
+                    <td>117</td>
                     <td>Lowest</td>
+                </tr>
+            </table>
+            <h4>Streaks</h4>
+            <p>
+                On my <a href="{{ url_for('powerball.search') }}">STATS PER NUMBER</a> 
+                page I introduced a term "Monthly Streaks" because
+                long DRAWING STREAKS have a tiny chance to happen. <br>
+                <br>
+                For reference the longest MONTHLY STREAK for white numbers belongs to 
+                number 32, and it recorded a 11 month drawing streak. On the other hand,
+                number 9 holds the record for red balls with a 7 month drawing streak.<br>
+                <br>
+                I'd like to show you the numbers that record the longest drawing streaks (LDD)
+            </p>
+            <table class="basic-stats" id="bs-streaks">
+                <tr>
+                    <th>Number(s)</th>
+                    <th>Ball Type</th>
+                    <th>Longest Drawing Streak (LDD)</th>
+                    <th>Date of LDD</th>
+                </tr>
+                <tr>
+                    <td>69</td>
+                    <td>White Ball</td>
+                    <td>4</td>
+                    <td>10/11/2017 - 10/21/2017</td>
+                </tr>
+                <tr>
+                    <td>24, 21</td>
+                    <td>Powerball</td>
+                    <td>3</td>
+                    <td>08/01/2020 - 08/08/2020 AND 09/08/2021 - 09/13/2021</td>
+                </tr>
+            </table>
+            <h4>YEARLY RECORDS</h4>
+            <p>
+                Although you can check yearly stats for any number on 
+                <a href="{{ url_for('powerball.search') }}">STATS PER NUMBER</a>, 
+                I thought it would be good to show you Powerball's best and worst
+                in this category.
+            </p>
+            <p>
+                One thing to always keep in mind when looking at the Powerball's yearly stats
+                is that starting on August 23, 2021, draws would occur on Monday, in addition 
+                to Wednesday and Saturday. Therefore, years after 2021 will most likely have
+                higher numbers than the years coming before 2021.
+            </p>
+            <h5>-- White Numbers --</h5>
+            <table class="probability-table-white" id="tw-records">
+                <tr>
+                    <th>Number</th>
+                    <th>Times Drawn In Year</th>
+                    <th>Year</th>
+                    <th>Placement</th>
+                </tr>
+                <tr>
+                    <td>37, 24</td>
+                    <td>21</td>
+                    <td>2022, 2023</td>
+                    <td>Best</td>
+                </tr>
+                <tr>
+                    <td>45, 34</td>
+                    <td>1</td>
+                    <td>2016, 2017</td>
+                    <td>Worst</td>
+                </tr>
+            </table>
+            <h5>-- Red Numbers (Powerball) --</h5>
+            <table class="probability-table-red" id="tr-records">
+                <tr>
+                    <th>Number</th>
+                    <th>Times Drawn In Year</th>
+                    <th>Year</th>
+                    <th>Placement</th>
+                </tr>
+                <tr>
+                    <td>18, 4, 21</td>
+                    <td>13</td>
+                    <td>2020, 2023, 2024</td>
+                    <td>Best</td>
+                </tr>
+                <tr>
+                    <td>14, 16, 12, 15</td>
+                    <td>0</td>
+                    <td>2017, 2019, 2020, 2020</td>
+                    <td>Worst</td>
                 </tr>
             </table>
         </div>
