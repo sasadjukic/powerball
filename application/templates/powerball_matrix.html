@@ -2,8 +2,136 @@
 
 <body>
     {% block content %}
-        <div class="matrix-content">
-            PAGE UNDER CONSTRUCTION
-        </div>
+        <form action="{{ url_for('powerball.powerball_matrix') }}" method="POST">
+            <label for="matrix-input">Enter a red (POWERBALL) number</label>
+            <input type="number" id="matrix-input" name="matrix-input" min="1" max="69" required>
+            <input type="submit" id="matrix-button"value="Submit">
+        </form>
+        {% if number %}
+            <div class="matrix-content">
+                <div class="mc-title">
+                    <h3>Powerball Number</h3>
+                    <h3>--- {{ number }} ---</h3>
+                </div>
+                <h4 class="stats-title">Last Five Draws</h4>
+                <table class="mc-last-five">
+                    <tr>
+                        <th>Draw Date</th>
+                        <th>White Numbers</th>
+                        <th>Powerball</th>
+                    </tr>
+                    {% for i in range(0, (m_data[number][0] | length)) %}
+                        <tr>
+                            <td>{{ m_data[number][0][i][0] }}</td>
+                            <td>{{ m_data[number][0][i][1] }}</td>
+                            <td>{{ number }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <p class="matrix-span">
+                    <span class="probability-minor">
+                        *Last five draws that number {{ number }} has been drawn as Powerball
+                    </span> 
+                </p> 
+                <h4 class="stats-title">WHITE NUMBERS</h4>
+                <table class="probability-table-white" id="mc-table-white">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th colspan="10">White Numbers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                        <tr>
+                            <th>Numbers (N)</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <th>N</th>
+                            {% for i in range(0, 10) %}
+                                <td>{{ m_data[number][1][i] }}</td>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <th>N+10</th>
+                            {% for i in range(10, 20) %}
+                                <td>{{ m_data[number][1][i] }}</td>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <th>N+20</th>
+                            {% for i in range(20, 30) %}
+                                <td>{{ m_data[number][1][i] }}</td>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <th>N+30</th>
+                            {% for i in range(30, 40) %}
+                                <td>{{ m_data[number][1][i] }}</td>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <th>N+40</th>
+                            {% for i in range(40, 50) %}
+                                <td>{{ m_data[number][1][i] }}</td>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <th>N+50</th>
+                            {% for i in range(50, 60) %}
+                                <td>{{ m_data[number][1][i] }}</td>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <th>N+60</th>
+                            {% for i in range(60, 69) %}
+                                <td>{{ m_data[number][1][i] }}</td>
+                            {% endfor %}
+                            <td>*</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="matrix-span">
+                    <span class="probability-minor">
+                        *How often EACH white number has been drawn together with Powerball {{ number }}
+                    </span> 
+                </p> 
+                <h4 class="stats-title">WINNING HANDS</h4>
+                <table class="probability-table-red" id="mc-table-red">
+                    <tr>
+                        <th>Singles</th>
+                        <th>Pair</th>
+                        <th>Two Pairs</th>
+                        <th>Three of Set</th>
+                        <th>Full House</th>
+                        <th>Poker</th>
+                        <th>Flush</th>
+                    </tr>
+                    <tr>
+                        {% for i in range(0, 7) %}
+                            <td>{{ m_data[number][2][i] }}</td>
+                        {% endfor %}
+                    </tr>
+                </table>
+                <p class="matrix-span">
+                    <span class="probability-minor">
+                        *How often EACH winning pattern of WHITE NUMBERS has been drawn together with Powerball {{ number }}
+                    </span><br>
+                    <span class="probability-minor">
+                        **To familiarize yourself with WINNING HANDS of WHITE NUMBERS check this link -> <a href="/winning_hands">WINNING HANDS</a>
+                    </span> 
+                </p> 
+            </div>
+        {% endif %}
     {% endblock %}
 </body>
