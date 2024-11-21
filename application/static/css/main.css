@@ -465,6 +465,10 @@ img {
         padding: 15px;
     }
 
+    #ff-table-white, #ff-table-red {
+        margin-bottom: 0px;
+    }
+
     #tr-records, #tw-records {
         display: flex;
         justify-content: center;

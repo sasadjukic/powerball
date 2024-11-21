@@ -3,9 +3,9 @@
 <body>
     {% block content %}
         <div class="recent-winners">
-            <p class="rc-title">Winners of the last 12 draws</p>
+            <p class="rc-title">Winners of the last 26 draws</p>
             <div class="nc-main-container">
-                {% for i in range(12) %}
+                {% for i in range(26) %}
                     <p class="nc-title">Draw Date</p>
                     <p class="rc-date">{{ recent[0][i] }}</p>
                     <p class="rc-numbers">Winning Numbers</p>

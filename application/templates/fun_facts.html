@@ -15,7 +15,7 @@
                 number of consecutive draws your number has NOT been drawn.
             </p>
             <h5>-- White Numbers --</h5>
-            <table class="probability-table-white">
+            <table class="probability-table-white" id="ff-table-white">
                 <tr>
                     <th>Number</th>
                     <th>Max Drawing Drought (MDD)</th>
@@ -38,8 +38,13 @@
                     <td>Lowest</td>
                 </tr>
             </table>
+            <p>   
+                <span class="probability-minor" id="pm-span2">
+                    *Averages rounded to closest digit for clarity
+                </span>
+            </p>
             <h5>-- Red Numbers (Powerball) --</h5>
-            <table class="probability-table-red">
+            <table class="probability-table-red" id="ff-table-red">
                 <tr>
                     <th>Number</th>
                     <th>Max Drawing Drought (MDD)</th>
@@ -62,24 +67,29 @@
                     <td>Lowest</td>
                 </tr>
             </table>
+            <p>   
+                <span class="probability-minor" id="pm-span2">
+                    *Averages rounded to closest digit for clarity
+                </span>
+            </p>
             <h4>Streaks</h4>
             <p>
                 On my <a href="{{ url_for('powerball.search') }}" target="_blank" rel="noopener noreferrer">STATS PER NUMBER</a> 
                 page I introduced a term "Monthly Streaks" because
                 long DRAWING STREAKS have a tiny chance to happen. <br>
                 <br>
-                For reference the longest MONTHLY STREAK for white numbers belongs to 
+                For reference, the longest MONTHLY STREAK for white numbers belongs to 
                 number 32, and it recorded a 11 month drawing streak. On the other hand,
                 number 9 holds the record for red balls with a 7 month drawing streak.<br>
                 <br>
-                I'd like to show you the numbers that record the longest drawing streaks (LDD)
+                I'd like to show you the numbers that recorded the longest drawing streaks (LDS)
             </p>
             <table class="basic-stats" id="bs-streaks">
                 <tr>
                     <th>Number(s)</th>
                     <th>Ball Type</th>
-                    <th>Longest Drawing Streak (LDD)</th>
-                    <th>Date of LDD</th>
+                    <th>Longest Drawing Streak (LDS)</th>
+                    <th>Date of LDS</th>
                 </tr>
                 <tr>
                     <td>69</td>
@@ -110,7 +120,7 @@
             <h5>-- White Numbers --</h5>
             <table class="probability-table-white" id="tw-records">
                 <tr>
-                    <th>Number</th>
+                    <th>Number(s)</th>
                     <th>Times Drawn In Year</th>
                     <th>Year</th>
                     <th>Placement</th>
@@ -131,7 +141,7 @@
             <h5>-- Red Numbers (Powerball) --</h5>
             <table class="probability-table-red" id="tr-records">
                 <tr>
-                    <th>Number</th>
+                    <th>Number(s)</th>
                     <th>Times Drawn In Year</th>
                     <th>Year</th>
                     <th>Placement</th>

@@ -2,7 +2,7 @@
 
 from application.data.main_data import powerball
 
-recent = powerball.tail(12)
+recent = powerball.tail(26)
 reverse_r = recent.iloc[::-1]
 
 #get last 12 draws with dates, winning white numbers and winning red numbers
