@@ -100,9 +100,9 @@
         {% endif %}
         {% if white_percentage %}
             <h4 class="stats-title">Monthly stats</h4>
-            <img src="data:image/png;base64,{{ chart_white_monthly }}" alt="Monthly Chart">
+            <img src="data:image/png;base64,{{ chart_white_monthly }}" alt="Powerball Monthly Chart Per White Number">
             {% if red_percentage %}
-                <img src="data:image/png;base64,{{ chart_red_monthly }}" alt="Monthly Chart">
+                <img src="data:image/png;base64,{{ chart_red_monthly }}" alt="Powerball Monthly Chart Per Red Number">
             {% endif %}
         {% endif %}
         {% if white_percentage %}
@@ -113,9 +113,9 @@
                     in addition to Wednesday and Saturday
                 </span>
             </p>
-            <img src="data:image/png;base64,{{ chart_white_yearly }}" alt="Yearly Chart">
+            <img src="data:image/png;base64,{{ chart_white_yearly }}" alt="Powerball Yearly Chart Per White Number">
             {% if red_percentage %}
-                <img src="data:image/png;base64,{{ chart_red_yearly }}" alt="Yearly Chart">
+                <img src="data:image/png;base64,{{ chart_red_yearly }}" alt="Powerball Yearly Chart Per Red Number">
             {% endif %}
         {% endif %}
     {% endblock %}
