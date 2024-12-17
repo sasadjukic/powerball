@@ -1,6 +1,6 @@
 
 <STRONG>ABOUT</STRONG><br>
-- Simple web app displaying data for Powerball lotery. Another reminder that this data covers Powerball numbers since the rules changed on October 4th 2015. This simple web app is live and you can find it on <https://powerball-app-bpdwc.ondigitalocean.app/>
+- Simple web app displaying data for Powerball lotery. Another reminder that this data covers Powerball numbers since the rules changed on October 4th 2015. This simple web app is live and you can find it on <https://powerballdata.com>
 
 <STRONG>DATA COVERED</STRONG><br>
 - Top 10 winning white numbers
