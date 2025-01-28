@@ -31,11 +31,13 @@
             <p>
                 All time records can sometimes be misleading. The trends can swing away from the all time stats. 
                 In this analysis you'll quite often see words like ALL TIME, LAST 6 MONTHS, and RECENT TRENDS.
-                The first two are self explenatory. The third one is a bit more vague. Word RECENT can be subjective.
+                The first is self explenatory. The second (6 MONTHS) I capped at 80 draws. The third one is a bit more vague. Word RECENT can be subjective.
             </p>
             <p>
                 After observing Powerball winning numbers I have settled to 
-                define RECENT TRENDS as the last 26 draws. Now, let's see HOW and IF our splits deviate in our
+                define RECENT TRENDS as the last 26 draws. So, when you read the numbers, remember
+                that 6 MONTHS is last 80 draws, and RECENT TRENDS is last 26 draws. 
+                Now, let's see HOW and IF our splits deviate in our
                 three different time categories.
             </p>
             <table class="comparison-tables">
@@ -277,7 +279,7 @@
                     <td class="six-months">{{ (winning_hands['two_pairs'][1]/total_winning_hands_6 * 100)|round(2) }} %</td>
                     <td class="recent-trends">{{ winning_hands['two_pairs'][2] }}</td>
                     <td class="recent-trends">{{ (winning_hands['two_pairs'][2]/total_winning_hands_recent * 100)|round(2) }} %</td>
-                    <td class="extra-info">01-22-2025</td>
+                    <td class="extra-info">01-27-2025</td>
                     <td class="extra-info">Fifties / Sixties</td>
                 </tr>
                 <tr>

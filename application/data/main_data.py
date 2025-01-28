@@ -33,7 +33,7 @@ start_date_6 = last_draw
 end_date_6 = six_months_ago
 
 # Get dataframe for the last six months
-powerball_6_months = powerball[(powerball['Draw Date'] <= start_date_6) & (powerball['Draw Date'] >= end_date_6)]
+powerball_6_months = powerball.tail(80)
 
 # Explode Winning Numbers column to get each number separately
 powerball_explode_6 = powerball_6_months.explode('Winning Numbers')
