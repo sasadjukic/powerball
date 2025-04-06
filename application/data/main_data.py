@@ -25,13 +25,6 @@ latest = last_draw.date().strftime('%m-%d-%Y')
 # Get date only from pandas date object to export to html
 earliest = first_draw.date().strftime('%m-%d-%Y')
 
-# Subtract 6 months from the maximum date
-six_months_ago = last_draw - pd.DateOffset(months=6)
-
-# Ranged data for the last six months
-start_date_6 = last_draw 
-end_date_6 = six_months_ago
-
 # Get dataframe for the last six months
 powerball_6_months = powerball.tail(80)
 
@@ -40,10 +33,9 @@ powerball_explode_6 = powerball_6_months.explode('Winning Numbers')
 
 # Find next draw
 def next_draw():
-    event_days = [0, 2, 5]
-    today = datetime.date.today()
+    l_draw = powerball['Draw Date'].max().date()
     
-    for i in range(7):
-        next_date = today + datetime.timedelta(days=i)
-        if next_date.weekday() in event_days:
-            return next_date
+    if l_draw.weekday() == 2:
+        return l_draw + datetime.timedelta(days=3)
+
+    return l_draw + datetime.timedelta(days=2)
