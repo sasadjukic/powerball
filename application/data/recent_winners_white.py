@@ -1,7 +1,7 @@
 
 
 # *****Time Filtered Search*****
-# This will show top 10 winning numbers white numbers in last 6 months
+# This will show top 10 winning white numbers in last 6 months
 from application.data.main_data import powerball_explode_6
 import pandas as pd
 import matplotlib

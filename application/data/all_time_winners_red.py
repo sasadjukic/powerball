@@ -1,6 +1,5 @@
 
 # Display top ten winning Red Numbers of ALL TIME
-# All time meaning from October 4 2015 when Powerball rules changed
 from application.data.main_data import powerball
 import matplotlib
 matplotlib.use('Agg')
