@@ -241,6 +241,20 @@ form {
         text-transform: uppercase;
     }
 
+    .matrix-para {
+        max-width: 600px;
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    #wn-title, #hl-title{
+        margin-top: 35px;
+    }
+
+    #wh-para, #wn-para{
+        margin-bottom: 35px;
+    }
+
 .hands-content {
     margin-left: auto;
     margin-right: auto;

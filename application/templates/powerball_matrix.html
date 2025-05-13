@@ -33,7 +33,60 @@
                         *Last five draws that number {{ number }} has been drawn as Powerball
                     </span> 
                 </p> 
-                <h4 class="stats-title">WHITE NUMBERS</h4>
+                <h4 class="stats-title">SUMS of White Numbers</h4>
+                <p class="matrix-para">
+                    Every winning powerball number comes with 5 winning white numbers 
+                    in a single draw. Let's check stats of the sums of these white 
+                    numbers for the chosen powerball number
+                </p>
+                <table class="probability-table-white" id="ff-table-white">
+                    <tr>
+                        <th>Powerball</th>
+                        <th>Maximum Sum</th>
+                        <th>Average Sum</th>
+                        <th>Minimum Sum</th>
+                    </tr>
+                    <tr>
+                        <td>{{ number }}</td>
+                        <td>{{ m_data[number][1][0] }}</td>
+                        <td>{{ m_data[number][1][1] }}</td>
+                        <td>{{ m_data[number][1][2] }}</td>
+                    </tr>
+                </table>
+                <p>   
+                    <span class="probability-minor" id="pm-span2">
+                        *Averages rounded to the closest digit for clarity
+                    </span>
+                </p>
+                <h4 class="stats-title" id="hl-title">Highest/Lowest Difference</h4>
+                <p class="matrix-para">
+                    In addition to white number sums, we can check the difference
+                    between highest and lowest white number in a single draw for given powerball number
+                </p>
+                <table class="probability-table-red" id="ff-table-red">
+                    <tr>
+                        <th>Powerball</th>
+                        <th>Maximum Difference</th>
+                        <th>Average Difference</th>
+                        <th>Minimum Difference</th>
+                    </tr>
+                    <tr>
+                        <td>{{ number }}</td>
+                        <td>{{ m_data[number][1][3] }}</td>
+                        <td>{{ m_data[number][1][4] }}</td>
+                        <td>{{ m_data[number][1][5] }}</td>
+                    </tr>
+                </table>
+                <p>   
+                    <span class="probability-minor" id="pm-span2">
+                        *Averages rounded to the closest digit for clarity
+                    </span>
+                </p>
+                <h4 class="stats-title" id="wn-title">WHITE NUMBERS</h4>
+                <p class="matrix-para" id="wn-para">
+                    The table below shows how many times each white number has been drawn together
+                    with our chosen powerball number
+                </p>
                 <table class="probability-table-white" id="mc-table-white">
                     <tbody>
                         <tr>
@@ -52,43 +105,43 @@
                         <tr>
                             <th>N</th>
                             {% for i in range(0, 10) %}
-                                <td>{{ m_data[number][1][i] }}</td>
+                                <td>{{ m_data[number][2][i] }}</td>
                             {% endfor %}
                         </tr>
                         <tr>
                             <th>N+10</th>
                             {% for i in range(10, 20) %}
-                                <td>{{ m_data[number][1][i] }}</td>
+                                <td>{{ m_data[number][2][i] }}</td>
                             {% endfor %}
                         </tr>
                         <tr>
                             <th>N+20</th>
                             {% for i in range(20, 30) %}
-                                <td>{{ m_data[number][1][i] }}</td>
+                                <td>{{ m_data[number][2][i] }}</td>
                             {% endfor %}
                         </tr>
                         <tr>
                             <th>N+30</th>
                             {% for i in range(30, 40) %}
-                                <td>{{ m_data[number][1][i] }}</td>
+                                <td>{{ m_data[number][2][i] }}</td>
                             {% endfor %}
                         </tr>
                         <tr>
                             <th>N+40</th>
                             {% for i in range(40, 50) %}
-                                <td>{{ m_data[number][1][i] }}</td>
+                                <td>{{ m_data[number][2][i] }}</td>
                             {% endfor %}
                         </tr>
                         <tr>
                             <th>N+50</th>
                             {% for i in range(50, 60) %}
-                                <td>{{ m_data[number][1][i] }}</td>
+                                <td>{{ m_data[number][2][i] }}</td>
                             {% endfor %}
                         </tr>
                         <tr>
                             <th>N+60</th>
                             {% for i in range(60, 69) %}
-                                <td>{{ m_data[number][1][i] }}</td>
+                                <td>{{ m_data[number][2][i] }}</td>
                             {% endfor %}
                             <td>*</td>
                         </tr>
@@ -100,6 +153,10 @@
                     </span> 
                 </p> 
                 <h4 class="stats-title">WINNING HANDS</h4>
+                <p class="matrix-para" id="wh-para">
+                    Finally, let's see the winning hands of white numbers 
+                    together with our chosen powerball number
+                </p>
                 <table class="probability-table-red" id="mc-table-red">
                     <tr>
                         <th>Singles</th>
@@ -112,7 +169,7 @@
                     </tr>
                     <tr>
                         {% for i in range(0, 7) %}
-                            <td>{{ m_data[number][2][i] }}</td>
+                            <td>{{ m_data[number][3][i] }}</td>
                         {% endfor %}
                     </tr>
                 </table>
